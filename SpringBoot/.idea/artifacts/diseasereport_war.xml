@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="diseasereport:war">
+    <output-path>$PROJECT_DIR$/diseasereport/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>diseasereport</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="diseasereport-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="diseasereport:war exploded" />
+    </root>
+  </artifact>
+</component>
