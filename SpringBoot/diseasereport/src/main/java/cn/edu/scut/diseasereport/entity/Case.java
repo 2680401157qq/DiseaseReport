@@ -2,10 +2,6 @@ package cn.edu.scut.diseasereport.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
-import javax.persistence.Id;
 import java.sql.Date;
 
 /**
@@ -14,10 +10,7 @@ import java.sql.Date;
  * @description:
  */
 @Data
-@Entity
 public class Case {
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
     private Integer id;
 
     private Integer idUser;
