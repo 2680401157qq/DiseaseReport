@@ -10,4 +10,7 @@ class DiseasereportApplicationTests {
     void contextLoads() {
     }
 
+    public void test() {
+        
+    }
 }
