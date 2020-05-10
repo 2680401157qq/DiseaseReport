@@ -87,6 +87,7 @@
           <element id="library" level="project" name="Maven: org.mapstruct:mapstruct:1.2.0.Final" />
           <element id="library" level="project" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.47" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.12" />
         </element>
       </element>
       <element id="directory" name="META-INF">
