@@ -18,6 +18,10 @@ public class Doctor {
     
     private String sex;
 
-    public Doctor(int i, String doctor1, String doctor11, String 男) {
+    public Doctor(Integer id, String name, String password, String sex) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.sex = sex;
     }
 }

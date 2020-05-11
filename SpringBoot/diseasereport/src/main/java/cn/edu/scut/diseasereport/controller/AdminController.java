@@ -15,7 +15,7 @@ import java.util.List;
  * @description:
  */
 @RestController
-public class TestController {
+public class AdminController {
     @Autowired
     private AdminService mAdminService;
 

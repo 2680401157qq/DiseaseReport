@@ -1,4 +1,4 @@
-package cn.edu.scut.diseasereport;
+package cn.edu.scut.diseasereport.user;
 
 import cn.edu.scut.diseasereport.entity.Admin;
 import cn.edu.scut.diseasereport.service.AdminService;

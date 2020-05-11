@@ -1,6 +1,6 @@
 package cn.edu.scut.diseasereport.service;
 
-import cn.edu.scut.diseasereport.dao.UserMapper;
+import cn.edu.scut.diseasereport.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +13,6 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private UserMapper mUserMapper;
+    private UserDao mUserDao;
+    
 }

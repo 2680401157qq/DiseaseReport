@@ -11,7 +11,7 @@ import java.util.List;
  * @description:
  */
 @Mapper
-public interface AdminMapper {
+public interface AdminDao {
     
     /**
      * 获得所有管理员信息
