@@ -1,6 +1,5 @@
 package cn.edu.scut.diseasereport.dao;
 
-import cn.edu.scut.diseasereport.entity.Doctor;
 import cn.edu.scut.diseasereport.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,36 +19,36 @@ public interface UserDao {
      * @param user
      * @return 成功：true 失败：false
      */
-    boolean createUser(User user);
+    int createUser(User user);
 
     /**
      * 修改User信息
      *
-     * @param id
+     * @param user
      * @return 成功：true 失败：false
      */
-    boolean editUser(Integer id);
+    int editUser(User user);
 
     /**
-     * 删除用户
+     * 删除User
      *
      * @param id
      * @return 成功：true 失败：false
      */
-    boolean deleteUser(Integer id);
+    int deleteUser(Integer id);
 
     /**
-     * 根据id获取用户信息
+     * 根据id获取User信息
      *
      * @param id
      * @return
      */
-    Doctor getDoctorById(Integer id);
+    User getUserById(Integer id);
 
     /**
-     * 获取所有医生用户信息
+     * 获取所有User信息
      *
      * @return
      */
-    List<Doctor> getDoctorList();
+    List<User> getUserList();
 }

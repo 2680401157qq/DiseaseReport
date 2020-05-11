@@ -14,7 +14,7 @@ import java.util.List;
 public interface DoctorDao {
 
     /**
-     * 创建医生用户
+     * 创建Doctor用户
      *
      * @param doctor
      * @return 成功：true 失败：false
@@ -22,7 +22,7 @@ public interface DoctorDao {
     int createDoctor(Doctor doctor);
 
     /**
-     * 修改医生的信息
+     * 修改Doctor的信息
      *
      * @param doctor
      * @return 成功：true 失败：false
@@ -30,7 +30,7 @@ public interface DoctorDao {
     int editDoctorInfo(Doctor doctor);
 
     /**
-     * 根据id删除医生用户
+     * 根据id删除Doctor用户
      *
      * @param id
      * @return 成功：true 失败：false
@@ -38,7 +38,7 @@ public interface DoctorDao {
     int deleteDoctor(Integer id);
     
     /**
-     * 根据id获得医生用户信息
+     * 根据id获得Doctor用户信息
      *
      * @param id
      * @return
@@ -46,7 +46,7 @@ public interface DoctorDao {
     Doctor getDoctorById(Integer id);
     
     /**
-     * 获取所有医生信息
+     * 获取所有Doctor信息
      *
      * @return
      */

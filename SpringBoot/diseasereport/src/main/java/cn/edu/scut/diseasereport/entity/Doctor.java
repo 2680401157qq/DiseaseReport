@@ -1,5 +1,6 @@
 package cn.edu.scut.diseasereport.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @description:
  */
 @Data
+@AllArgsConstructor
 public class Doctor {
     
     private Integer id;
@@ -17,11 +19,5 @@ public class Doctor {
     private String password;
     
     private String sex;
-
-    public Doctor(Integer id, String name, String password, String sex) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.sex = sex;
-    }
+    
 }

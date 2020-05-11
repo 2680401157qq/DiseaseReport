@@ -1,5 +1,6 @@
 package cn.edu.scut.diseasereport.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.sql.Date;
@@ -10,6 +11,7 @@ import java.sql.Date;
  * @description:
  */
 @Data
+@AllArgsConstructor
 public class Case {
     private Integer id;
 
