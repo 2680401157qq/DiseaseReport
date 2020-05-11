@@ -10,12 +10,12 @@ import java.sql.Date;
  * @description:
  */
 @Data
-public class Case {
+public class DiseaseCase {
     private Integer id;
 
-    private Integer idUser;
+    private User user;
 
-    private char level;
+    private char diseaseLevel;
 
     private String diseaseName;
 

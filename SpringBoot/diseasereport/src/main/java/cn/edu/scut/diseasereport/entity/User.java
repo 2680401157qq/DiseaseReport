@@ -25,4 +25,6 @@ public class User {
     private String clazz;
 
     private String grade;
+
+    private String studentNum;
 }
