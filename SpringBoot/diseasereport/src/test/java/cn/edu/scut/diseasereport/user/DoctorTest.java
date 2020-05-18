@@ -16,7 +16,7 @@ import java.util.List;
 @SpringBootTest
 public class DoctorTest {
     @Autowired
-    private DoctorService mDoctorService;
+    DoctorService mDoctorService;
 
     @Test
     public void createDoctorTest() {
