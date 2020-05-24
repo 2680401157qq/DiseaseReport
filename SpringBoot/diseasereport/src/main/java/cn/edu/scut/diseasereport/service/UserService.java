@@ -1,17 +1,22 @@
 package cn.edu.scut.diseasereport.service;
 
-import cn.edu.scut.diseasereport.dao.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import cn.edu.scut.diseasereport.entity.User;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @author: lshuang.SE
- * @date: 2020/5/10 16:51
+ * @date: 2020/5/18 15:26
  * @description:
  */
-@Service
-public class UserService {
+public interface UserService {
 
-    @Autowired
-    private UserMapper mUserMapper;
+    boolean createUser(User user);
+
+    boolean editUser(User user);
+
+    boolean deleteUser(Integer id);
+
+    User getUserById(Integer id);
+
+    PageInfo<User> getUserList(int pageNum, int pageSize);
 }

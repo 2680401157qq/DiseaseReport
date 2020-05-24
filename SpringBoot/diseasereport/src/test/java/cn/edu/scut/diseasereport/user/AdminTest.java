@@ -1,8 +1,8 @@
-package cn.edu.scut.diseasereport;
+package cn.edu.scut.diseasereport.user;
 
 import cn.edu.scut.diseasereport.entity.Admin;
 import cn.edu.scut.diseasereport.service.AdminService;
-import cn.edu.scut.diseasereport.service.DoctorService;
+import cn.edu.scut.diseasereport.service.impl.DoctorServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +21,7 @@ public class AdminTest {
     AdminService mAdminService;
 
     @Autowired
-    DoctorService mDoctorService;
+    DoctorServiceImpl mDoctorService;
     @Test
     public void getAdminByIdTest() {
         Admin adminById = mAdminService.getAdminById(1);

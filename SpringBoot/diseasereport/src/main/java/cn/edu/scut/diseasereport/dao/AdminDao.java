@@ -11,17 +11,17 @@ import java.util.List;
  * @description:
  */
 @Mapper
-public interface AdminMapper {
+public interface AdminDao {
     
     /**
-     * 获得所有管理员信息
+     * 获得所有Admin信息
      *
      * @return
      */
     List<Admin> getAdminList();
 
     /**
-     * 根据id获得admin信息
+     * 根据id获得Admin信息
      *
      * @param id
      * @return

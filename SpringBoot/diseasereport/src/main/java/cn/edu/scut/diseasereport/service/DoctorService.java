@@ -1,13 +1,23 @@
 package cn.edu.scut.diseasereport.service;
 
-import org.springframework.stereotype.Service;
+import cn.edu.scut.diseasereport.entity.Doctor;
+
+import java.util.List;
 
 /**
  * @author: lshuang.SE
- * @date: 2020/5/10 16:51
+ * @date: 2020/5/18 15:25
  * @description:
  */
-@Service
-public class DoctorService {
-    
+public interface DoctorService {
+
+    boolean createDoctor(Doctor doctor);
+
+    boolean editDoctorInfo(Doctor doctor);
+
+    boolean deleteDoctor(Integer id);
+
+    Doctor getDoctorById(Integer id);
+
+    List<Doctor> getDoctorList(int pageNum,int pageSize);
 }

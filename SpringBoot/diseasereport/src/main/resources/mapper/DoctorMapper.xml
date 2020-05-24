@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scut.diseasereport.dao.DoctorDao">
+    
+    <insert id="createDoctor" >
+        insert into doctor values (#{id},#{name},#{password},#{sex})
+    </insert>
+
+    <update id="editDoctorInfo" parameterType="Doctor">
+        update doctor set `name`=#{name},password=#{password},sex=#{sex} 
+        where id=#{id};
+    </update>
+    
+    <delete id="deleteDoctor" parameterType="_int">
+        delete from doctor where id=#{id}
+    </delete>
+    
+    <select id="getDoctorById" parameterType="_int" resultType="Doctor">
+        select * from doctor where id=#{id};
+    </select>
+    
+    <select id="getDoctorList" resultType="Doctor">
+        select * from doctor;
+    </select>
+</mapper>
