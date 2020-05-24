@@ -25,10 +25,10 @@ public class User {
     private String institute;
 
     private String major;
+    
+    private String grade;
 
     private String dormitory;
 
     private String clazz;
-
-    private String grade;
 }

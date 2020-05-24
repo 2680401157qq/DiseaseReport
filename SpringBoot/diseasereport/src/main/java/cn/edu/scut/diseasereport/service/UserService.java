@@ -1,8 +1,7 @@
 package cn.edu.scut.diseasereport.service;
 
 import cn.edu.scut.diseasereport.entity.User;
-
-import java.util.List;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @author: lshuang.SE
@@ -19,5 +18,5 @@ public interface UserService {
 
     User getUserById(Integer id);
 
-    List<User> getUserList();
+    PageInfo<User> getUserList(int pageNum, int pageSize);
 }

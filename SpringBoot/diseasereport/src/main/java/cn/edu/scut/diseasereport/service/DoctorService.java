@@ -19,5 +19,5 @@ public interface DoctorService {
 
     Doctor getDoctorById(Integer id);
 
-    List<Doctor> getDoctorList();
+    List<Doctor> getDoctorList(int pageNum,int pageSize);
 }

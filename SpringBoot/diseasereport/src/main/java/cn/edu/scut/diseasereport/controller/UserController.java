@@ -2,10 +2,9 @@ package cn.edu.scut.diseasereport.controller;
 
 import cn.edu.scut.diseasereport.entity.User;
 import cn.edu.scut.diseasereport.service.UserService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author: lshuang.SE
@@ -40,7 +39,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
-    public List<User> getUserList() {
-        return mUserService.getUserList();
+    public PageInfo<User> getUserList(@RequestParam int pageNum, @RequestParam int pageSize) {
+        PageInfo<User> page = mUserService.getUserList(pageNum, pageSize);
+        System.out.println(page);
+        return page;
     }
 }

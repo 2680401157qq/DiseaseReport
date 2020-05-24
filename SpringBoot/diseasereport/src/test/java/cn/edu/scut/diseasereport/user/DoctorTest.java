@@ -43,7 +43,7 @@ public class DoctorTest {
 
     @Test
     public void getDoctorList() {
-        List<Doctor> doctorList = mDoctorService.getDoctorList();
+        List<Doctor> doctorList = mDoctorService.getDoctorList(1,2);
         System.out.println(doctorList);
     }
 }

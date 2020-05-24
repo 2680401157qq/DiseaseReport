@@ -35,7 +35,7 @@ public class DoctorController {
     }
     
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
-    public List<Doctor> getDoctorList() {
-        return mDoctorService.getDoctorList();
+    public List<Doctor> getDoctorList(@RequestParam int pageNum,@RequestParam int pageSize) {
+        return mDoctorService.getDoctorList(pageNum,pageSize);
     }
 }
