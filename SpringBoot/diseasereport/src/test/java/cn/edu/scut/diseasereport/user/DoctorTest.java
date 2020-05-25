@@ -2,11 +2,10 @@ package cn.edu.scut.diseasereport.user;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
 import cn.edu.scut.diseasereport.service.DoctorService;
+import com.github.pagehelper.PageInfo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 /**
  * @author: lshuang.SE
@@ -20,7 +19,7 @@ public class DoctorTest {
 
     @Test
     public void createDoctorTest() {
-        Doctor doctor = new Doctor(2, "张三", "doctorPassWord", "男");
+        Doctor doctor = new Doctor(3, "张三", "doctorPassWord", "男");
         mDoctorService.createDoctor(doctor);
     }
 
@@ -43,7 +42,7 @@ public class DoctorTest {
 
     @Test
     public void getDoctorList() {
-        List<Doctor> doctorList = mDoctorService.getDoctorList(1,2);
+        PageInfo<Doctor> doctorList = mDoctorService.getDoctorList(1,2);
         System.out.println(doctorList);
     }
 }

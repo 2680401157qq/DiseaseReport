@@ -5,6 +5,7 @@ import cn.edu.scut.diseasereport.entity.Doctor;
 import cn.edu.scut.diseasereport.service.DoctorService;
 import cn.edu.scut.diseasereport.utils.SqlUtils;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,10 +42,10 @@ public class DoctorServiceImpl implements DoctorService {
         return mDoctorDao.getDoctorById(id);
     }
 
-    public List<Doctor> getDoctorList(int pageNum,int pageSize) {
+    public PageInfo<Doctor> getDoctorList(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<Doctor> doctorList = mDoctorDao.getDoctorList();
-        return doctorList;
+        return new PageInfo<>(doctorList);
     }
     
 }

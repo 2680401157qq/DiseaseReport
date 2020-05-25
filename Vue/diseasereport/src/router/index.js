@@ -1,78 +1,86 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import UserManager from "../views/UserManager";
-import Index from "../views/Index"
+import Index from "../views/Index";
+import UserContainer from "../components/UserContainer";
+import UserTable from "../components/UserTable";
+import DoctorTable from "../components/DoctorTable";
+import UserAdd from "../components/UserAdd";
+import UserEdit from "../components/UserEdit";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
-
 Vue.use(VueRouter)
 
   const routes = [
     {
-      path: "/",
-      name: "普通用户",
-      component: Index,
-      redirect: "/doctor/diseasecase/table",
-      children: [
+      path:"/",
+      name:"/",
+      component:Index,
+      children:[
         {
-          path: "/diseasecase",
+          path: "/userinfo",
+          name: "用户信息",
+          isShow:[true,true,true]
+        },
+        {
+          path: "/health",
+          name: "健康打卡",
+          isShow:[true,true,true],
+        },
+        {
+          path: "/disease",
           name: "案例管理",
-          component: {render: (c) => c("router-view")},
+          isShow:[false,true,true],
           children: [
             {
-              path: "/diseasecase/table",
-              name: "案例列表",
-              component: DiseaseCaseTable
-            }
-          ]
-        }
-      ]
-    },
-    {
-      path: "/doctor",
-      name: "医生用户",
-      component: Index,
-      children: [
-        {
-          path: "/diseasecase",
-          name: "案例管理",
-          component: {render: (c) => c("router-view")},
-          children: [
-            {
-              path: "/doctor/diseasecase/table",
-              name: "案例列表",
-              component: DiseaseCaseTable
+              path: "/diseasetable",
+              name: "案例查看",
+              component: DiseaseCaseTable,
+              show: true,
             },
             {
-              path: "/doctor/diseacase/add",
-              name: "添加案例",
-              component: DiseaseCaseAdd
+              path: "/diseaseadd",
+              name: "案例录入",
+              component: DiseaseCaseAdd,
+              show: true,
             }
           ]
-        }
-      ]
-    },
-    {
-      path: "/admin",
-      name: "管理员用户",
-      component: Index,
-      children: [
+        },
         {
-          path: "/diseasecase",
-          name: "案例管理",
-          component: {render: (c) => c("router-view")},
-          children: [
+          path: "/user",
+          name: "人员管理",
+          component:UserContainer,
+          isShow:[false,false,true],
+          children:[
             {
-              path: "/admin/diseasecase/table",
-              name: "案例列表",
-              component: DiseaseCaseTable
+              path: "/doctortable",
+              name: "医生管理",
+              show:true,
+              component:DoctorTable
             },
             {
-              path: "/admin/diseacase/add",
-              name: "添加案例",
-              component: DiseaseCaseAdd
+              path: "/usertable",
+              name: "用户管理",
+              show:true,
+              component:UserTable
+            },
+            {
+              path:"/useradd",
+              name:"添加用户",
+              show:true,
+              component:UserAdd
+            },
+            {
+              path:"/useredit",
+              name:"修改用户",
+              show:false,
+              component:UserEdit
             }
           ]
+        },
+        {
+          path: "/data",
+          name:"统计分析",
+          isShow:[false,true,true]
         }
       ]
     }

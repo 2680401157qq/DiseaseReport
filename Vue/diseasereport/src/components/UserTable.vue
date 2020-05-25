@@ -50,11 +50,10 @@
                     width="120">
             </el-table-column>
             <el-table-column
-                    fixed="right"
                     label="操作">
                 <template slot-scope="scope">
-                    <el-button type="text" size="small">查看</el-button>
-                    <el-button type="text" size="small">编辑</el-button>
+                    <el-button @click="edit(scope.row)" type="text" size="small">修改</el-button>
+                    <el-button @click="deleteById(scope.row)" type="text" size="small">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -71,14 +70,39 @@
 <script>
     export default {
         methods: {
-            handleClick(row) {
-                console.log(row);
+            deleteById(row){
+                const _this = this;
+                axios.get('http://localhost:8001/diseasereport/user/delete?id='+row.id).then(function (response) {
+                    if (response.data){
+                        _this.$alert('删除成功','消息',{
+                            confirmButtonText:'确定',
+                            callback:action => {
+                                window.location.reload();
+                            }
+                        })
+                    }else {
+                        _this.$alert('删除失败','消息',{
+                            confirmButtonText:'确定',
+                            callback:action => {
+                                window.location.reload();
+                            }
+                        })
+                    }
+                })
+            },
+            edit(row) {
+                this.$router.push({
+                    path:'/useredit',
+                    query:{
+                        studentId:row.studentId
+                    }
+                })
             },
             pageChange(currentPage){
                 const _this = this
                 axios.get('http://localhost:8001/diseasereport/user/get/list?pageNum='+currentPage+'&pageSize=10').then(function (response) {
                     _this.tableData = response.data.list
-                    _this.totalPage = response.data.pages
+                    console.log(response.data.list)
                 })
             }
         },
@@ -88,41 +112,12 @@
             axios.get('http://localhost:8001/diseasereport/user/get/list?pageNum=1&pageSize=10').then(function (response) {
                 _this.tableData = response.data.list
                 _this.total = response.data.total
-                console.log(response)
             })
         },
         data() {
             return {
                 total: null,
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1518 弄',
-                    zip: 200333
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1517 弄',
-                    zip: 200333
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1519 弄',
-                    zip: 200333
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1516 弄',
-                    zip: 200333
-                }]
+                tableData:[]
             };
         }
     }

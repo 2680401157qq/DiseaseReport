@@ -29,13 +29,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public boolean deleteUser(@RequestParam int id) {
-        return mUserService.deleteUser(id);
+    public boolean deleteUser(@RequestParam String id) {
+        return mUserService.deleteUser(Integer.valueOf(id));
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public User getUserById(@RequestParam int id) {
-        return mUserService.getUserById(id);
+    public User getUserById(@RequestParam String studentId) {
+        return mUserService.getUserById(studentId);
     }
 
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)

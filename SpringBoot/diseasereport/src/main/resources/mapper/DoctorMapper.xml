@@ -10,7 +10,7 @@
 
     <update id="editDoctorInfo" parameterType="Doctor">
         update doctor set `name`=#{name},password=#{password},sex=#{sex} 
-        where id=#{id};
+        where id=#{id}
     </update>
     
     <delete id="deleteDoctor" parameterType="_int">
@@ -18,10 +18,10 @@
     </delete>
     
     <select id="getDoctorById" parameterType="_int" resultType="Doctor">
-        select * from doctor where id=#{id};
+        select * from doctor where id=#{id}
     </select>
     
     <select id="getDoctorList" resultType="Doctor">
-        select * from doctor;
+        select * from doctor
     </select>
 </mapper>

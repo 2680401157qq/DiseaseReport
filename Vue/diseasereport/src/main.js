@@ -5,7 +5,6 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import FilterForm from "./components/FilterForm";
-import HelloWorld from "./components/HelloWorld";
 import UserInfoForm from "./components/UserInfoForm";
 import Common from "./components/Common";
 import CaseInfoForm from "./components/CaseInfoForm";
