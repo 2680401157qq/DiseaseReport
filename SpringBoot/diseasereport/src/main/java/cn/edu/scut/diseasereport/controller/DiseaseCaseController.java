@@ -2,6 +2,7 @@ package cn.edu.scut.diseasereport.controller;
 
 import cn.edu.scut.diseasereport.entity.DiseaseCase;
 import cn.edu.scut.diseasereport.service.DiseaseCaseService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,7 +27,7 @@ public class DiseaseCaseController {
     private DiseaseCaseService diseaseCaseService;
 
     @RequestMapping(value = "/list/get", method = RequestMethod.POST)
-    public List<DiseaseCase> selectDiseaseCase(HttpServletRequest request) {
+    public PageInfo<DiseaseCase> selectDiseaseCase(HttpServletRequest request) {
         Map<String, Object> params = new HashMap<>();
         // 获取参数
         params.put("disease_level", request.getParameter("disease_level"));
@@ -39,7 +40,7 @@ public class DiseaseCaseController {
         int pageNo = Integer.parseInt(request.getParameter("page_no"));
         int pageSize = Integer.parseInt(request.getParameter("page_size"));
         PageInfo<DiseaseCase> page = diseaseCaseService.selectDiseaseCase(params, pageNo, pageSize);
-        return page.getList();
+        return page;
     }
 
     @RequestMapping(value = "/add/request", method = RequestMethod.POST)
