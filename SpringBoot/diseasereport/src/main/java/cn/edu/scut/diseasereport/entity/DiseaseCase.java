@@ -1,6 +1,5 @@
 package cn.edu.scut.diseasereport.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.sql.Date;
@@ -11,13 +10,12 @@ import java.sql.Date;
  * @description:
  */
 @Data
-@AllArgsConstructor
-public class Case {
+public class DiseaseCase {
     private Integer id;
 
-    private Integer idUser;
+    private User user;
 
-    private char level;
+    private char diseaseLevel;
 
     private String diseaseName;
 

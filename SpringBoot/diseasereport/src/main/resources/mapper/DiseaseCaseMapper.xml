@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scut.diseasereport.dao.DiseaseCaseDao">
+    <resultMap id="DiseaseCaseResultMap" type="cn.edu.scut.diseasereport.entity.DiseaseCase">
+        <id column="id" property="id"/>
+        <result column="disease_level" property="diseaseLevel"/>
+        <result column="disease_name" property="diseaseName"/>
+        <result column="create_time" property="createTime"/>
+        <result column="remark" property="remark"/>
+        <association property="user" column="id_user" javaType="cn.edu.scut.diseasereport.entity.User">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="student_num" property="studentNum"/>
+            <result column="sex" property="sex"/>
+            <result column="institute" property="institute"/>
+            <result column="major" property="major"/>
+            <result column="dormitory" property="dormitory"/>
+            <result column="clazz" property="clazz"/>
+            <result column="grade" property="grade"/>
+        </association>
+    </resultMap>
+
+    <select id="selectDiseaseCase" resultMap="DiseaseCaseResultMap">
+        select d.id, d.disease_level, d.disease_name, d.create_time, d.remark, u.id id_user, u.name,
+                u.student_num, u.sex, u.institute, u.major, u.dormitory, u.clazz, u.grade
+        from disease_case d, user u
+        where d.id_user = u.id
+        <if test="disease_level != null and disease_level != ''">
+            and d.disease_level = #{disease_level}
+        </if>
+        <if test="sex != null and sex != ''">
+            and u.sex = #{sex}
+        </if>
+        <if test="institute != null and institute != ''">
+            and u.institute = #{institute}
+        </if>
+        <if test="major != null and major != ''">
+            and u.major = #{major}
+        </if>
+        <if test="dormitory != null and dormitory != ''">
+            and u.dormitory = #{dormitory}
+        </if>
+        <if test="clazz != null and clazz != ''">
+            and u.clazz = #{clazz}
+        </if>
+        <if test="grade != null and grade != ''">
+            and u.grade = #{grade}
+        </if>
+        order by d.create_time desc
+    </select>
+
+    <insert id="insertDiseaseCase" parameterType="cn.edu.scut.diseasereport.entity.DiseaseCase">
+        insert into disease_case(id_user, disease_level, disease_name, remark)
+        values(#{user.id}, #{diseaseLevel}, #{diseaseName}, #{remark})
+    </insert>
+
+    <update id="updateDiseaseCase" parameterType="cn.edu.scut.diseasereport.entity.DiseaseCase">
+        update disease_case
+        <set>
+            <if test="disease_level != null and disease_level != ''">
+                disease_level = #{diseaseLevel},
+            </if>
+            <if test="disease_name != null and disease_name != ''">
+                disease_name = #{diseaseName},
+            </if>
+            <if test="remark != null and remark != ''">
+                remark = #{remark},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDiseaseCase">
+        delete from disease_case where id = #{id}
+    </delete>
+</mapper>

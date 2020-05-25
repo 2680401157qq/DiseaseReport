@@ -1,0 +1,8 @@
+spring:
+  #  profiles:
+  #    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/disease_report?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone = GMT%2B8&autoReconnect=true
+    username: giahaowjx
+    password: 975608278jx.
+    driver-class-name: com.mysql.jdbc.Driver
