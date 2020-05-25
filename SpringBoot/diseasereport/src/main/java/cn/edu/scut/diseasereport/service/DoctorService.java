@@ -1,8 +1,7 @@
 package cn.edu.scut.diseasereport.service;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
-
-import java.util.List;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @author: lshuang.SE
@@ -19,5 +18,5 @@ public interface DoctorService {
 
     Doctor getDoctorById(Integer id);
 
-    List<Doctor> getDoctorList(int pageNum,int pageSize);
+    PageInfo<Doctor> getDoctorList(int pageNum, int pageSize);
 }

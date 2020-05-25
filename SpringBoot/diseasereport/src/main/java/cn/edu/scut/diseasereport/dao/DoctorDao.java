@@ -2,6 +2,7 @@ package cn.edu.scut.diseasereport.dao;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public interface DoctorDao {
      * @param doctor
      * @return 成功：true 失败：false
      */
+    @Options(useGeneratedKeys = true,keyProperty = "id")
     int createDoctor(Doctor doctor);
 
     /**

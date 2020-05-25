@@ -2,6 +2,7 @@ package cn.edu.scut.diseasereport.dao;
 
 import cn.edu.scut.diseasereport.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public interface UserDao {
      * @param user
      * @return 成功：true 失败：false
      */
+    @Options(useGeneratedKeys = true,keyProperty = "id")
     int createUser(User user);
 
     /**
@@ -40,10 +42,10 @@ public interface UserDao {
     /**
      * 根据id获取User信息
      *
-     * @param id
+     * @param studentId
      * @return
      */
-    User getUserById(Integer id);
+    User getUserById(String studentId);
 
     /**
      * 获取所有User信息
