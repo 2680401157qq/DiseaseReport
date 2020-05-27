@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 import Index from "../views/Index";
 import UserContainer from "../components/UserContainer";
 import UserTable from "../components/UserTable";
@@ -9,10 +10,12 @@ import UserEdit from "../components/UserEdit";
 import DiseaseContainer from "../components/DiseaseContainer";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
+
 Vue.use(VueRouter)
 
   const routes = [
     {
+
       path:"/",
       name:"/",
       component:Index,
@@ -82,10 +85,22 @@ Vue.use(VueRouter)
             {
                 path: "/data",
                 name: "统计分析",
-                isShow: [false, true, true]
+                //加一个xxContainer
+                isShow: [false, true, true],
+                children: [
+                    {
+                        path:'/getbyday',
+                        component: () => import('../views/Getbyday.vue')
+                      },
+                      {
+                        path:'/getbyinstitute',
+                        component: () => import('../views/Getbyinstitute.vue')
+                      },
+                ]
             }
         ]
     }
+
 ]
 
 const router = new VueRouter({

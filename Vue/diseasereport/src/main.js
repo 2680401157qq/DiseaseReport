@@ -9,6 +9,10 @@ import UserInfoForm from "./components/UserInfoForm";
 import Common from "./components/Common";
 import CaseInfoForm from "./components/CaseInfoForm";
 
+import myCharts from './chartjs/mychart.js'
+Vue.use(myCharts)
+
+
 Vue.config.productionTip = false
 
 new Vue({
