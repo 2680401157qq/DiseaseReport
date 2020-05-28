@@ -16,7 +16,7 @@ public interface UserService {
 
     boolean deleteUser(Integer id);
 
-    User getUserById(String studentId);
+    User getUserById(String studentNum);
 
     PageInfo<User> getUserList(int pageNum, int pageSize);
 }

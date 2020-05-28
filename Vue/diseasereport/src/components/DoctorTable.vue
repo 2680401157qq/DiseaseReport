@@ -1,9 +1,10 @@
 <template>
-    <div>
+    <el-main>
+        <el-button @click="addUser()" type="primary" plain icon="el-icon-circle-plus-outline">新增</el-button>
         <el-table
                 :data="tableData"
-                border="1"
-                style="margin: auto">
+                border
+                style="margin-top: 15px">
             <el-table-column
                     prop="id"
                     label="账号"
@@ -35,12 +36,15 @@
                 :total="total"
                 @current-change="pageChange">
         </el-pagination>
-    </div>
+    </el-main>
 </template>
 
 <script>
     export default {
         methods: {
+            addUser(){
+                this.$router.push('/doctoradd');
+            },
             deleteById(row){
                 const _this = this;
                 axios.get('http://localhost:8001/diseasereport/doctor/delete?id='+row.id).then(function (response) {

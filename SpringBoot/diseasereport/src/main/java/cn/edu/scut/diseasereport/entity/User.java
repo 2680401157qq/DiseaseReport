@@ -1,5 +1,6 @@
 package cn.edu.scut.diseasereport.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -8,11 +9,16 @@ import lombok.Data;
  * @description:
  */
 @Data
+@AllArgsConstructor
 public class User {
-    
+
     private Integer id;
     
+    private String studentNum;
+    
     private String name;
+    
+    private String password;
     
     private String sex;
 
@@ -20,11 +26,9 @@ public class User {
 
     private String major;
 
-    private String dormitory;
-
-    private String clazz;
-
     private String grade;
 
-    private String studentNum;
+    private String clazz;
+    
+    private String dormitory;
 }

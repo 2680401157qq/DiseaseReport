@@ -42,10 +42,10 @@ public interface UserDao {
     /**
      * 根据id获取User信息
      *
-     * @param studentId
+     * @param studentNum
      * @return
      */
-    User getUserById(String studentId);
+    User getUserById(String studentNum);
 
     /**
      * 获取所有User信息

@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService {
         return SqlUtils.isOperationSuccess(i);
     }
 
-    public User getUserById(String studentId) {
-        return mUserDao.getUserById(studentId);
+    public User getUserById(String studentNum) {
+        return mUserDao.getUserById(studentNum);
     }
 
     public PageInfo<User> getUserList(int pageNum, int pageSize) {

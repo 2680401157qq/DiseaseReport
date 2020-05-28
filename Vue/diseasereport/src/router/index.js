@@ -9,6 +9,7 @@ import UserEdit from "../components/UserEdit";
 import DiseaseContainer from "../components/DiseaseContainer";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
+import DoctorAdd from "../components/DoctorAdd";
 Vue.use(VueRouter)
 
   const routes = [
@@ -68,8 +69,14 @@ Vue.use(VueRouter)
                     {
                         path: "/useradd",
                         name: "添加用户",
-                        show: true,
+                        show: false,
                         component: UserAdd
+                    },
+                    {
+                        path: "/doctoradd",
+                        name: "添加医生",
+                        show: false,
+                        component: DoctorAdd
                     },
                     {
                         path: "/useredit",

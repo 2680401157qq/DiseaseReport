@@ -34,8 +34,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public User getUserById(@RequestParam String studentId) {
-        return mUserService.getUserById(studentId);
+    public User getUserById(@RequestParam String studentNum) {
+        return mUserService.getUserById(studentNum);
     }
 
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
