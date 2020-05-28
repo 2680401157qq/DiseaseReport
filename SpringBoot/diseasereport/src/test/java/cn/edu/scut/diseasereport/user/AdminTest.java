@@ -14,12 +14,14 @@ import java.util.List;
  * @date: 2020/5/10 17:00
  * @description:
  */
+
 @SpringBootTest
 public class AdminTest {
 
     @Autowired
     AdminService mAdminService;
-
+//    @Autowired
+//    HealthService healthService;
     @Autowired
     DoctorServiceImpl mDoctorService;
     @Test
@@ -35,5 +37,12 @@ public class AdminTest {
             System.out.println(admin);
         }
     }
-    
+
+//    @Test
+//    public void getHData() {
+//        List<Healthful> aList = healthService.getHData();
+//        for (Healthful hdata: aList){
+//            System.out.println(hdata);
+//        }
+//    }
 }
