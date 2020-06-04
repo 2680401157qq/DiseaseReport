@@ -1,9 +1,6 @@
 <template>
     <div id="getbyinstitute">
-        <h1>学院数据展示</h1>
-        <Inspick/>
-        <div style="text-align:center;"><h2>近几天该学院数据</h2></div>
-        <div id="chart1"></div>
+        <div><Inspick /></div>
     </div>
 </template>
 
@@ -22,7 +19,8 @@ export default {
         }
     },
     mounted(){
-        this.$chart.zhu("chart1");
+        
+        
     }
 }
 </script>
@@ -30,7 +28,7 @@ export default {
 <style scoped>
 #getbyinstitute{
     width:80vw;
-    height:100vh;
+    height:100%;
 }
 #chart1{
     width:80%;
