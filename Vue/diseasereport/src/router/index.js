@@ -11,6 +11,9 @@ import DiseaseContainer from "../components/DiseaseContainer";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
 
+import DataContainer from "../components/DataContainer";
+
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -86,14 +89,21 @@ Vue.use(VueRouter)
                 path: "/data",
                 name: "统计分析",
                 //加一个xxContainer
+
+                component: DataContainer,
+
                 isShow: [false, true, true],
                 children: [
                     {
                         path:'/getbyday',
+                        name:"日期查询",
+                        show:true,
                         component: () => import('../views/Getbyday.vue')
                       },
                       {
                         path:'/getbyinstitute',
+                        name:'学院展示',
+                        show:true,
                         component: () => import('../views/Getbyinstitute.vue')
                       },
                 ]
