@@ -17,7 +17,7 @@ public class UserTest {
     UserService mUserService;
     @Test
     public void createUserTest(){
-        User user = new User(99, "201730685400", "ls", "lsoooo", "男", "软件学院", "软件工程", "2017", "C10-549", "软件一班");
+        User user = new User(99, "201730685400", "ls", "lsoooo", "男", "软件学院", "软件工程", "2017", "软件一班", "C10-549");
         mUserService.createUser(user);
     }
 }

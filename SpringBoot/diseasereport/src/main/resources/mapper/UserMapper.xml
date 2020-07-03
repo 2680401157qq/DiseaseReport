@@ -5,11 +5,11 @@
 <mapper namespace="cn.edu.scut.diseasereport.dao.UserDao">
     
     <insert id="createUser" parameterType="User">
-        insert into user values (#{id},#{studentId},#{name},#{password},#{sex},#{institute},#{major},#{dormitory},#{clazz},#{grade});
+        insert into user values (#{id},#{studentNum},#{name},#{password},#{sex},#{institute},#{major},#{dormitory},#{clazz},#{grade});
     </insert>
     
     <update id="editUser" parameterType="User">
-        update user set student_id=#{studentId},`name`=#{name},password=#{password},sex=#{sex}
+        update user set student_num=#{studentNum},`name`=#{name},password=#{password},sex=#{sex}
         ,institute=#{institute},major=#{major},dormitory=#{dormitory},clazz=#{clazz}
         where id=#{id}
     </update>
@@ -19,7 +19,7 @@
     </delete>
     
     <select id="getUserById" parameterType="String" resultType="User">
-        select * from user where student_id=#{studentId}
+        select * from user where student_num=#{studentNum}
     </select>
     
     <select id="getUserList" resultType="User">

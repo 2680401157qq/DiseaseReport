@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <el-form style="width: 30%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form style="width: 30%;margin: 0 auto 0;" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
             <el-form-item label="学号" prop="studentId">
-                <el-input v-model="ruleForm.studentId"></el-input>
+                <el-input v-model="ruleForm.studentNum"></el-input>
             </el-form-item>
             <el-form-item label="姓名" prop="name">
                 <el-input v-model="ruleForm.name"></el-input>
@@ -42,7 +41,6 @@
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-form-item>
         </el-form>
-    </div>
 </template>
 
 <script>
@@ -51,7 +49,7 @@
             return {
                 ruleForm: {
                     id:'',
-                    studentId:'',
+                    studentNum:'',
                     name: '',
                     sex: '',
                     password: '',
@@ -62,7 +60,7 @@
                     grade: ''
                 },
                 rules: {
-                    studentId: [
+                    studentNum: [
                         { required: true, message: '请输入学号', trigger: 'blur' },
                         { min: 12, max: 12, message: '长度为 12 个数字', trigger: 'blur' }
                     ],

@@ -10,23 +10,29 @@ import UserEdit from "../components/UserEdit";
 import DiseaseContainer from "../components/DiseaseContainer";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
-
+import DoctorAdd from "../components/DoctorAdd";
+import Login from "../components/Login";
+import UserInfoForm from "../components/UserInfoForm";
 import DataContainer from "../components/DataContainer";
-
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
     {
-
-      path:"/",
-      name:"/",
-      component:Index,
+        path: "/login",
+        name: "登陆",
+        component: Login
+    },
+    {
+        path: "/",
+        name: "/",
+        component: Index,
         children: [
             {
                 path: "/userinfo",
                 name: "用户信息",
-                isShow: [true, true, true]
+                isShow: [true, false, false],
+                component: UserInfoForm
             },
             {
                 path: "/health",
@@ -37,7 +43,7 @@ Vue.use(VueRouter)
                 path: "/disease",
                 name: "案例管理",
                 isShow: [false, true, true],
-                component:DiseaseContainer,
+                component: DiseaseContainer,
                 children: [
                     {
                         path: "/diseasetable",
@@ -74,8 +80,14 @@ Vue.use(VueRouter)
                     {
                         path: "/useradd",
                         name: "添加用户",
-                        show: true,
+                        show: false,
                         component: UserAdd
+                    },
+                    {
+                        path: "/doctoradd",
+                        name: "添加医生",
+                        show: false,
+                        component: DoctorAdd
                     },
                     {
                         path: "/useredit",
@@ -89,34 +101,44 @@ Vue.use(VueRouter)
                 path: "/data",
                 name: "统计分析",
                 //加一个xxContainer
-
                 component: DataContainer,
-
                 isShow: [false, true, true],
                 children: [
                     {
-                        path:'/getbyday',
-                        name:"日期查询",
-                        show:true,
+                        path: '/getbyday',
+                        name: "日期查询",
+                        show: true,
                         component: () => import('../views/Getbyday.vue')
-                      },
-                      {
-                        path:'/getbyinstitute',
-                        name:'学院展示',
-                        show:true,
+                    },
+                    {
+                        path: '/getbyinstitute',
+                        name: '学院展示',
+                        show: true,
                         component: () => import('../views/Getbyinstitute.vue')
-                      },
+                    },
                 ]
             }
         ]
     }
-
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+});
+
+router.beforeEach((to, from, next) => {
+    let token = sessionStorage.getItem('token');
+    if (to.path === '/login') {
+        next();
+    } else {
+        if (token === '' || token == null) {
+            next('/login');
+        } else {
+            next();
+        }
+    }
 })
 
 export default router

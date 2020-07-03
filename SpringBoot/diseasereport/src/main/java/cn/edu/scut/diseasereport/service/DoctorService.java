@@ -1,6 +1,7 @@
 package cn.edu.scut.diseasereport.service;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
+import cn.edu.scut.diseasereport.entity.LoginResult;
 import com.github.pagehelper.PageInfo;
 
 /**
@@ -19,4 +20,6 @@ public interface DoctorService {
     Doctor getDoctorById(Integer id);
 
     PageInfo<Doctor> getDoctorList(int pageNum, int pageSize);
+
+    LoginResult doLogin(Doctor doctor);
 }

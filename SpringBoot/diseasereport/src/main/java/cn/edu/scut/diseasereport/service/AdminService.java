@@ -1,6 +1,7 @@
 package cn.edu.scut.diseasereport.service;
 
 import cn.edu.scut.diseasereport.entity.Admin;
+import cn.edu.scut.diseasereport.entity.LoginResult;
 
 import java.util.List;
 
@@ -10,8 +11,10 @@ import java.util.List;
  * @description:
  */
 public interface AdminService {
-    
+
     List<Admin> getAdminList();
 
     Admin getAdminById(int id);
+
+    LoginResult doLogin(Admin admin);
 }

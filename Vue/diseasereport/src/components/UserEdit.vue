@@ -5,7 +5,7 @@
                 <el-input v-model="ruleForm.id"></el-input>
             </el-form-item>
             <el-form-item label="学号" prop="studentId">
-                <el-input v-model="ruleForm.studentId"></el-input>
+                <el-input v-model="ruleForm.studentNum"></el-input>
             </el-form-item>
             <el-form-item label="姓名" prop="name">
                 <el-input v-model="ruleForm.name"></el-input>
@@ -54,7 +54,7 @@
             return {
                 ruleForm: {
                     id:'',
-                    studentId:'',
+                    studentNum:'',
                     name: '',
                     sex: '',
                     password: '',
@@ -65,7 +65,7 @@
                     grade: ''
                 },
                 rules: {
-                    studentId: [
+                    studentNum: [
                         { required: true, message: '请输入学号', trigger: 'blur' },
                         { min: 12, max: 12, message: '长度为 12 个数字', trigger: 'blur' }
                     ],
@@ -128,7 +128,7 @@
         },
         created() {
             const _this = this;
-            axios.get('http://localhost:8001/diseasereport/user/get?studentId=' + this.$route.query.studentId).then(function (response) {
+            axios.get('http://localhost:8001/diseasereport/user/get?studentNum=' + this.$route.query.studentNum).then(function (response) {
                 console.log(response.data)
                 _this.ruleForm = response.data;
             });

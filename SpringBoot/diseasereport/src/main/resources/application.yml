@@ -1,18 +1,25 @@
-
 server:
   port: 8001
   servlet:
     context-path: /diseasereport
 
 spring:
-  profiles:
-    active: dev
+  #  profiles:
+  #    active: dev
   datasource:
     url: jdbc:mysql://localhost:3306/disease_report?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone = GMT%2B8&autoReconnect=true
     username: root
-    password: 201730681365@mysql
-    driver-class-name: com.mysql.jdbc.Driver
+    password: ls0314..
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    port: 6379
+    host: 172.26.76.185
+    password: 123456
     
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:mapper/*.xml
+  
+  
+

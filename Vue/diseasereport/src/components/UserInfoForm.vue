@@ -1,36 +1,24 @@
 <template>
-    <el-main>
+    <div style="width: 30%;margin: 0 auto">
         <el-form ref="form" :model="userForm" label-width="auto">
             <el-form-item label="姓名">
                 <el-input v-model="userForm.name" :disabled="disableChange"></el-input>
             </el-form-item>
             <el-form-item label="学号">
-                <el-input v-model="userForm.id" :disabled="disableChange"></el-input>
+                <el-input v-model="userForm.studentNum" :disabled="disableChange"></el-input>
             </el-form-item>
-            <el-form inline="true">
-                <el-form-item label="性别">
-                    <el-select v-model="userForm.sex" :disabled="disableChange">
-                        <el-option label="男" value="男"></el-option>
-                        <el-option label="女" value="女"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="年级">
-                    <el-input v-model="userForm.grade" :disabled="disableChange"></el-input>
-                </el-form-item>
-            </el-form>
-            <el-form inline="true">
-                <el-form-item label="学院">
-                    <el-select v-model="userForm.institute" clearable :disabled="disableChange">
-                        <el-option v-for="item in institute" :label="item" :value="item"></el-option>
-                    </el-select>
-                </el-form-item>
-                <el-form-item label="专业">
-                    <el-select v-model="userForm.major" clearable :disabled="disableChange">
-                        <el-option v-for="item in major[institute.indexOf(userForm.institute)]" :label="item" :value="item">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
-            </el-form>
+            <el-form-item label="性别">
+                <el-input v-model="userForm.sex" :disabled="disableChange"></el-input>
+            </el-form-item>
+            <el-form-item label="年级">
+                <el-input v-model="userForm.grade" :disabled="disableChange"></el-input>
+            </el-form-item>
+            <el-form-item label="学院">
+                <el-input v-model="userForm.institute" clearable :disabled="disableChange"></el-input>
+            </el-form-item>
+            <el-form-item label="专业">
+                <el-input v-model="userForm.major" clearable :disabled="disableChange"></el-input>
+            </el-form-item>
             <el-form-item label="班级">
                 <el-input v-model="userForm.clazz" :disabled="disableChange"></el-input>
             </el-form-item>
@@ -38,7 +26,7 @@
                 <el-input v-model="userForm.dormitory" :disabled="disableChange"></el-input>
             </el-form-item>
         </el-form>
-    </el-main>
+    </div>
 </template>
 
 <script>
@@ -52,7 +40,7 @@
         data() {
             return {
                 userForm: {
-                    id: 0, //学号
+                    studentNum: "",
                     name: "",
                     sex: "",
                     grade: "",
@@ -60,16 +48,15 @@
                     institute: "",
                     major: "",
                     dormitory: ""
-                },
-                institute: this.Common.institute,
-                major: this.Common.major,
-                diseaseLevel: this.Common.diseaseLevel
+                }
             }
         },
-        methods: {
-            onSubmit() {
-                console.log('submit!');
-            }
+        mounted: function () {
+            const _this = this
+            axios.get('http://localhost:8001/diseasereport/user/get?studentNum=' + sessionStorage.getItem("id")).then(function (response) {
+                console.log(response.data)
+                _this.userForm = response.data;
+            });
         }
     }
 </script>

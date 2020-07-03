@@ -1,16 +1,17 @@
 <template>
-    <div>
+    <el-main>
+        <el-button @click="addUser()" type="primary" plain icon="el-icon-circle-plus-outline">新增</el-button>
         <el-table
                 :data="tableData"
                 border
-                style="width: 100%">
+                style="width: 100%;margin-top: 15px">
             <el-table-column
                     prop="id"
                     label="账号"
                     width="140">
             </el-table-column>
             <el-table-column
-                    prop="studentId"
+                    prop="studentNum"
                     label="学号"
                     width="140">
             </el-table-column>
@@ -64,12 +65,15 @@
                 :total="total"
                 @current-change="pageChange">
         </el-pagination>
-    </div>
+    </el-main>
 </template>
 
 <script>
     export default {
         methods: {
+            addUser(){
+                this.$router.push('/useradd');
+            },
             deleteById(row){
                 const _this = this;
                 axios.get('http://localhost:8001/diseasereport/user/delete?id='+row.id).then(function (response) {
@@ -94,7 +98,7 @@
                 this.$router.push({
                     path:'/useredit',
                     query:{
-                        studentId:row.studentId
+                        studentNum:row.studentNum
                     }
                 })
             },

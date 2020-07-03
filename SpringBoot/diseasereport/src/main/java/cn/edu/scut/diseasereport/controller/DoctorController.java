@@ -1,6 +1,8 @@
 package cn.edu.scut.diseasereport.controller;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
+import cn.edu.scut.diseasereport.entity.LoginData;
+import cn.edu.scut.diseasereport.entity.LoginResult;
 import cn.edu.scut.diseasereport.service.DoctorService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +39,15 @@ public class DoctorController {
     public Doctor getDoctorById(@RequestParam int id) {
         return mDoctorService.getDoctorById(id);
     }
-    
+
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
     public PageInfo<Doctor> getDoctorList(@RequestParam int pageNum, @RequestParam int pageSize) {
         PageInfo<Doctor> page = mDoctorService.getDoctorList(pageNum, pageSize);
         return page;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public LoginResult login(@RequestBody LoginData doctor) {
+        return mDoctorService.doLogin(new Doctor(Integer.parseInt(doctor.getId()), null, doctor.getPassword(), null));
     }
 }
