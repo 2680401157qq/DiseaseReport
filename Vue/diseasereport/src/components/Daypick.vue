@@ -1,4 +1,4 @@
-<template>
+nu<template>
 <div id="pick">
   <div class="block">
     <span class="demonstration">查看某一天的具体情况</span>

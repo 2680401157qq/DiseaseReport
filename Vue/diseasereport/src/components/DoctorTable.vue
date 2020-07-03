@@ -4,7 +4,7 @@
         <el-table
                 :data="tableData"
                 border
-                style="margin-top: 15px">
+                style="width: 441px;margin: 15px auto;">
             <el-table-column
                     prop="id"
                     label="账号"

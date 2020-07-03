@@ -11,20 +11,28 @@ import DiseaseContainer from "../components/DiseaseContainer";
 import DiseaseCaseTable from "../views/DiseaseCaseTable";
 import DiseaseCaseAdd from "../views/DiseaseCaseAdd";
 import DoctorAdd from "../components/DoctorAdd";
-import DataCotainer from "../components/DataCotainer";
-Vue.use(VueRouter)
+import DataContainer from "../components/DataCotainer";
+import Login from "../components/Login";
+import UserInfoForm from "../components/UserInfoForm";
 
-  const routes = [
+Vue.use(VueRouter);
+
+const routes = [
     {
-
-      path:"/",
-      name:"/",
-      component:Index,
+        path: "/login",
+        name: "登陆",
+        component: Login
+    },
+    {
+        path: "/",
+        name: "/",
+        component: Index,
         children: [
             {
                 path: "/userinfo",
                 name: "用户信息",
-                isShow: [true, true, true]
+                isShow: [true, false, false],
+                component: UserInfoForm
             },
             {
                 path: "/health",
@@ -92,18 +100,18 @@ Vue.use(VueRouter)
             {
                 path: "/data",
                 name: "统计分析",
-                component: DataCotainer,
+                component: DataContainer,
                 isShow: [false, true, true],
                 children: [
                     {
                         path: '/getbyday',
-                        name: 'getbyday',
+                        name: '日期',
                         component: () => import('../views/Getbyday.vue'),
                         show: true
                     },
                     {
                         path: '/getbyinstitute',
-                        name: 'getbyinstitute',
+                        name: '学院',
                         component: () => import('../views/Getbyinstitute.vue'),
                         show: true
                     },
@@ -111,13 +119,25 @@ Vue.use(VueRouter)
             }
         ]
     }
-
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+});
+
+router.beforeEach((to, from, next) => {
+    let token = sessionStorage.getItem('token');
+    if (to.path === '/login') {
+        next();
+    } else {
+        if (token === '' || token == null) {
+            next('/login');
+        } else {
+            next();
+        }
+    }
 })
 
 export default router

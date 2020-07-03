@@ -1,5 +1,5 @@
 <template>
-        <el-form style="width: 30%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form style="width: 30%;margin: 0 auto 0;" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
             <el-form-item label="学号" prop="studentId">
                 <el-input v-model="ruleForm.studentNum"></el-input>
             </el-form-item>

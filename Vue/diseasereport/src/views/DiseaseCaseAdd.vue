@@ -1,5 +1,5 @@
 <template>
-    <el-main>
+    <div>
         <filter-form :is-user-filter-on="false" :is-case-filter-on="false"></filter-form>
         <el-row align="middle">
             <el-col span="12">
@@ -15,11 +15,12 @@
                 <el-button>清空</el-button>
             </el-col>
         </el-row>
-    </el-main>
+    </div>
 </template>
 
 <script>
     import FilterForm from "../components/FilterForm";
+
     export default {
         components: {FilterForm},
         data() {
@@ -47,6 +48,7 @@
     .el-row {
         margin-bottom: 20px;
     }
+
     .row-bg {
         padding: 10px 0;
         background-color: #f9fafc;
