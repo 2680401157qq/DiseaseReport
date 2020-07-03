@@ -1,5 +1,6 @@
 package cn.edu.scut.diseasereport.service;
 
+import cn.edu.scut.diseasereport.entity.LoginResult;
 import cn.edu.scut.diseasereport.entity.User;
 import com.github.pagehelper.PageInfo;
 
@@ -9,7 +10,7 @@ import com.github.pagehelper.PageInfo;
  * @description:
  */
 public interface UserService {
-
+    
     boolean createUser(User user);
 
     boolean editUser(User user);
@@ -19,4 +20,6 @@ public interface UserService {
     User getUserById(String studentNum);
 
     PageInfo<User> getUserList(int pageNum, int pageSize);
+
+    LoginResult doLogin(User user);
 }

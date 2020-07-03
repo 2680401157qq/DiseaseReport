@@ -1,5 +1,7 @@
 package cn.edu.scut.diseasereport.controller;
 
+import cn.edu.scut.diseasereport.entity.LoginData;
+import cn.edu.scut.diseasereport.entity.LoginResult;
 import cn.edu.scut.diseasereport.entity.User;
 import cn.edu.scut.diseasereport.service.UserService;
 import com.github.pagehelper.PageInfo;
@@ -43,5 +45,10 @@ public class UserController {
         PageInfo<User> page = mUserService.getUserList(pageNum, pageSize);
         System.out.println(page);
         return page;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public LoginResult login(@RequestBody LoginData user) {
+        return mUserService.doLogin(new User(null, user.getId(), null, user.getPassword(), null, null, null, null, null, null));
     }
 }
