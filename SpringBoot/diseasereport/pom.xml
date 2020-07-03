@@ -88,19 +88,13 @@
             <version>1.18.12</version>
         </dependency>
 
-        <!-- redis-->
+        <!-- 动态生成Entity -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>3.3.0</version>
+            <scope>test</scope>
         </dependency>
-        
-        <!-- jwt token验证 -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.6.0</version>
-        </dependency>
-
     </dependencies>
 
     <build>

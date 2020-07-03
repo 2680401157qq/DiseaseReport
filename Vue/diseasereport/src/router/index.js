@@ -14,6 +14,7 @@ import DoctorAdd from "../components/DoctorAdd";
 import DataContainer from "../components/DataCotainer";
 import Login from "../components/Login";
 import UserInfoForm from "../components/UserInfoForm";
+import publishPunch from "../components/publishPunch";
 
 Vue.use(VueRouter);
 
@@ -76,6 +77,12 @@ const routes = [
                         name: "用户管理",
                         show: true,
                         component: UserTable
+                    },
+                    {
+                        path: "/publish",
+                        name: "发布打卡",
+                        show: true,
+                        component: publishPunch
                     },
                     {
                         path: "/useradd",
