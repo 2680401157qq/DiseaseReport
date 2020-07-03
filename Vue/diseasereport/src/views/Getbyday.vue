@@ -2,15 +2,14 @@
     <div id="getbyday">
         <div id="pick"> 
             <Daypick/>
-            <h1>近四天的我校的数据</h1>
         </div>
-        <div id="chart1"></div>
     </div>
 </template>
 
 <script>
 import Daypick from "../components/Daypick.vue"
-var echarts = require('echarts');
+//import Chart from "echarts"
+
 
 export default {
     name:'Getbyday',
@@ -23,7 +22,11 @@ export default {
         }
     },
     mounted(){
-        this.$chart.zhu('chart1');
+        //this.$chart.zhu("chart2");
+        
+    },
+    methods:{
+
     }
 }
 </script>
@@ -31,14 +34,20 @@ export default {
 <style scoped>
 #getbyday{
     width:80vw;
-    height:100vh;
-}
-#chart1{
-    width:80%;
-    height:80%;
-    margin:0 auto ;
+    height:90%;
 }
 #pick{
-    margin: 0 auto !important;
+    
 }
+#chart1{
+    width:45%;
+    height:50%;
+    margin:0 auto ;
+}
+#chart2{
+    width:45%;
+    height:100%;
+    margin:80 10 20 10px;
+}
+
 </style>

@@ -22,11 +22,6 @@ import java.util.List;
 public class AdminController {
     @Autowired
     private AdminService mAdminService;
-
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public Admin getAdminById(@RequestParam int id) {
-        return mAdminService.getAdminById(id);
-    }
     
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Admin> getAdminList() {

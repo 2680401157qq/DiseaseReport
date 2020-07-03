@@ -9,9 +9,10 @@ const install = function(Vue) {
                     
                     //画一条简单的线
                     line1: function (id) {
+                        
                         this.chart = echarts.init(document.getElementById(id));
                         this.chart.clear();
-
+    
                         const optionData = {
                             legend: {},
                             tooltip: {},
