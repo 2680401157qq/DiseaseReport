@@ -67,25 +67,22 @@
             <el-table-column
                     fixed="right"
                     label="操作"
-                    width="120">
+                    width="160">
                 <template slot-scope="scope">
-                    <el-button
-                            @click.native.prevent="deleteRow(scope.$index, tableData)"
-                            type="text"
-                            size="small">
-                        移除
-                    </el-button>
+                    <el-button plain type="primary" size="mini">编辑</el-button>
+                    <el-button plain type="danger" size="mini">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
-
-        <el-pagination
-                background
-                layout="prev, pager, next"
-                :page-size= "1"
-                :total="3"
-                @current-change="page">
-        </el-pagination>
+            <div style="text-align: center; margin-top: 10px">
+                <el-pagination
+                        background
+                        layout="prev, pager, next"
+                        :page-size= "1"
+                        :total="3"
+                        @current-change="page">
+                </el-pagination>
+            </div>
     </el-main>
 </template>
 
@@ -94,16 +91,18 @@
         data() {
             return {
                 total: 0,
-                tableData: null
+                tableData: null,
+                pageSize: 50,
             }
         },
         created() {
             const _this = this;
 
             let form = new FormData();
-            form.append("page_no", "1");
-            form.append("page_size", "1");
-            axios.post("http://localhost:8001/diseasereport/case/list/get", form).then(function (response) {
+            form.append("page_no", 1);
+            form.append("page_size", this.pageSize);
+            axios.post("case/list/get", form).then(function (response) {
+                console.log(response.data.list)
                 _this.tableData = response.data.list;
                 _this.total = response.data.total;
             })
@@ -114,7 +113,7 @@
                 let form = new FormData();
                 form.append("page_no", currentPage + "");
                 form.append("page_size", "1");
-                axios.post("http://localhost:8001/diseasereport/case/list/get", form).then(function (response) {
+                axios.post("case/list/get", form).then(function (response) {
                     _this.tableData = response.data.list;
                     _this.total = response.data.total;
                 })

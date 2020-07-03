@@ -75,7 +75,10 @@
         },
         methods: {
             submit() {
-                console.log(this.filterInfo);
+                let form = new FormData();
+                if (this.isUserFilterOn) {
+                    form.append('')
+                }
             }
         }
     }
