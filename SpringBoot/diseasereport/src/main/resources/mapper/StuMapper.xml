@@ -4,12 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.scut.diseasereport.dao.StuDao">
     <select id="getHData" resultType="Healthful">
-        select * from data
+        select * from adata where day = #{day}
     </select>
     <select id="getByInstitute" parameterType="String" resultType="Healthful">
-        select healthNum,lightNum,seriousNum,institute,day from data where institute = #{institute}
+        select * from adata where institute = #{institute}
     </select>
     <select id="getByDay" parameterType="String" resultType="Healthful">
         select healthNum,lightNum,seriousNum,institute,day from sumdata where day = #{day}
     </select>
+    <select id="getSource" resultType="Healthful">
+        select level, count(*) from disease_case group by level
+    </select>
+    <insert id="insertSumdata" parameterType="String">
+        insert into sumdata (healthNum,day) select count(*),time from disease_case where level="health" and time="20200704"
+    </insert>
 </mapper>

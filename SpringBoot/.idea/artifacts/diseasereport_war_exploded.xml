@@ -15,16 +15,6 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:2.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:2.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.2.7.RELEASE" />
-          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
-          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
-          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.12.1" />
-          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.12.1" />
-          <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.30" />
-          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.25" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-json:2.2.7.RELEASE" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.4" />
@@ -73,6 +63,16 @@
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.8" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:1.2" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.12" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:2.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:2.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.2.7.RELEASE" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.2.3" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-to-slf4j:2.12.1" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.12.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.30" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.25" />
         </element>
       </element>
       <element id="directory" name="META-INF">
