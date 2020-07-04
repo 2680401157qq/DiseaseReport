@@ -15,7 +15,7 @@ public interface PunchTableService {
      * @param tableName
      * @param columns
      */
-    public boolean createPunchTable(String tableName, List<String> columns);
+    public int createPunchTable(String tableName, List<String> columns);
 
     /**
      * 停止打卡

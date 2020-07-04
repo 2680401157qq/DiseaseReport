@@ -58,12 +58,14 @@ const routes = [
                         name: "发布任务",
                         component: PublishPunch,
                         show: true,
+                        icon: 'el-icon-upload2'
                     },
                     {
                         path: "/history",
                         name: "任务历史",
                         component: PunchHistory,
                         show: true,
+                        icon: 'el-icon-s-claim'
                     }
                 ]
             },
