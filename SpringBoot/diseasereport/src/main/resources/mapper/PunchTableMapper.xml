@@ -5,10 +5,14 @@
 <mapper namespace="cn.edu.scut.diseasereport.dao.PunchTableDao">
     <!-- 建表 -->
     <update id="createPunchTable" parameterType="map">
-        create table ${tableName}(date date,
+        create table `${tableName}` (
+        `id` int(0) AUTO_INCREMENT,
+        `date` datetime(0) DEFAULT CURRENT_TIMESTAMP(0),
         <foreach collection="columns" item="listItem" separator=",">
-            ${listItem} varchar(30)
+            `${listItem}` varchar(30)
         </foreach>
+        ,`id_user` int,
+        primary key (`id`)
         )
     </update>
 
@@ -17,7 +21,7 @@
     </update>
 
     <insert id="insertPunch" parameterType="map">
-        insert into ${tableName} values (NOW(),
+        insert into ${tableName} values (``, NOW(),
         <foreach collection="data" item="dataItem" separator=",">
             '${dataItem}'
         </foreach>

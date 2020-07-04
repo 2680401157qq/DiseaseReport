@@ -19,9 +19,13 @@ public class PunchTableServiceImpl implements PunchTableService {
     PunchTableDao mPunchTableDao;
 
     @Override
-    public boolean createPunchTable(String tableName, List<String> columns) {
-        int i = mPunchTableDao.createPunchTable(tableName, columns);
-        return SqlUtils.isOperationSuccess(i);
+    public int createPunchTable(String tableName, List<String> columns) {
+        int result = mPunchTableDao.createPunchTable(tableName, columns);
+//        return SqlUtils.isOperationSuccess(i);
+        if (result == 0) {
+            throw new RuntimeException();
+        }
+        return result;
     }
 
     @Override
