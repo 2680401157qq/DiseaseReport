@@ -1,6 +1,7 @@
 package cn.edu.scut.diseasereport.controller;
 
 import cn.edu.scut.diseasereport.entity.PunchHistory;
+import cn.edu.scut.diseasereport.entity.SelectResult;
 import cn.edu.scut.diseasereport.service.PunchTableListService;
 import cn.edu.scut.diseasereport.service.PunchTableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class PunchController {
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public boolean deletePunch(@RequestParam String tableName) {
+        mPunchTableListService.deletePunch(tableName);
         return mPunchTableService.deletePunchTable(tableName);
     }
 
@@ -58,5 +60,11 @@ public class PunchController {
         String activePunch = mPunchTableListService.getActivePunch();
         List<String> columnNames = mPunchTableService.getColumnNames(activePunch);
         return columnNames;
+    }
+
+    @RequestMapping(value = "/punches", method = RequestMethod.GET)
+    public SelectResult getPunches(@RequestParam String tableName) {
+        String strSql = "select * from " + tableName;
+        return mPunchTableService.selectPunchList(strSql);
     }
 }

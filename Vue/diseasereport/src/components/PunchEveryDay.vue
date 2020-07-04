@@ -67,12 +67,14 @@
             const _this = this
             axios.get('http://localhost:8001/diseasereport/punch/items').then(function (response) {
                 console.log(response);
-                for (let i = 1; i < response.data.length; i++) {
+                for (let i = 0; i < response.data.length; i++) {
                     let data = response.data;
-                    _this.dynamicValidateForm.domains.push({
-                        name: data[i],
-                        value: '',
-                    });
+                    if (data[i] !== ('date')) {
+                        _this.dynamicValidateForm.domains.push({
+                            name: data[i],
+                            value: '',
+                        });
+                    }
                 }
             })
         }

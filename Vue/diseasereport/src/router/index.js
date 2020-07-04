@@ -18,6 +18,7 @@ import PunchContainer from "../components/PunchContainer";
 import PunchHistory from "../components/PunchHisoryTable";
 import PublishPunch from "../components/PublishPunch";
 import PunchEveryDay from "../components/PunchEveryDay";
+import PunchDetail from "../components/PunchDetail";
 
 Vue.use(VueRouter)
 
@@ -64,6 +65,12 @@ const routes = [
                         name: "任务历史",
                         component: PunchHistory,
                         show: true,
+                    },
+                    {
+                        path: "/detail",
+                        name: "打卡列表",
+                        component: PunchDetail,
+                        show: false,
                     }
                 ]
             },

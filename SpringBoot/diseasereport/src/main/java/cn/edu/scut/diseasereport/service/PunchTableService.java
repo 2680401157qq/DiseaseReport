@@ -1,5 +1,7 @@
 package cn.edu.scut.diseasereport.service;
 
+import cn.edu.scut.diseasereport.entity.SelectResult;
+
 import java.util.List;
 
 /**
@@ -15,14 +17,14 @@ public interface PunchTableService {
      * @param tableName
      * @param columns
      */
-    public boolean createPunchTable(String tableName, List<String> columns);
+    boolean createPunchTable(String tableName, List<String> columns);
 
     /**
      * 停止打卡
      *
      * @param tableName
      */
-    public boolean deletePunchTable(String tableName);
+    boolean deletePunchTable(String tableName);
 
     /**
      * 插入数据
@@ -31,7 +33,9 @@ public interface PunchTableService {
      * @param data      要插入的数据
      * @return
      */
-    public boolean insertPunch(String tableName, List<String> data);
+    boolean insertPunch(String tableName, List<String> data);
 
-    public List<String> getColumnNames(String tableName);
+    List<String> getColumnNames(String tableName);
+
+    SelectResult selectPunchList(String sqlStr);
 }

@@ -21,7 +21,7 @@
     </update>
 
     <delete id="deletePunch" parameterType="map">
-        delete from doctor where `name`='${tableName}';
+        delete from punchlist where `name`='${tableName}';
     </delete>
 
     <select id="getActivePunch" resultType="String">

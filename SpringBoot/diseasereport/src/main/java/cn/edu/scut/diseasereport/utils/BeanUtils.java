@@ -1,6 +1,6 @@
 package cn.edu.scut.diseasereport.utils;
 
-import cn.edu.scut.diseasereport.entity.Punch;
+import cn.edu.scut.diseasereport.entity.CustomBean;
 
 import java.beans.BeanInfo;
 import java.beans.Introspector;
@@ -38,7 +38,7 @@ public class BeanUtils {
         returnMap.putAll(addValMap);
         typeMap.putAll(addMap);
         //map转换成实体对象
-        Punch bean = new Punch(typeMap);
+        CustomBean bean = new CustomBean(typeMap);
         //赋值
         Set keys = typeMap.keySet();
         for (Iterator it = keys.iterator(); it.hasNext(); ) {

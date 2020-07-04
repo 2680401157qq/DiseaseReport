@@ -19,6 +19,14 @@
                     label="发布时间"
                     width="auto">
             </el-table-column>
+            <el-table-column
+                    label="操作"
+                    width="auto">
+                <template slot-scope="scope">
+                    <el-button @click="view(scope.row)" type="text" size="small">查看</el-button>
+                    <el-button @click="deleteTable(scope.row)" type="text" size="small">删除</el-button>
+                </template>
+            </el-table-column>
         </el-table>
     </div>
 </template>
@@ -30,6 +38,33 @@
             return {
                 tableData: []
             };
+        },
+        methods: {
+            view(row) {
+                this.$router.push({
+                    path: '/detail',
+                    query: {
+                        tableName: row.name
+                    }
+                })
+            },
+            deleteTable(row) {
+                const _this = this;
+                axios.get('http://localhost:8001/diseasereport/punch/delete?tableName=' + row.name).then(function (response) {
+                    if (response.data) {
+                        _this.$alert('删除成功', '消息', {
+                            confirmButtonText: '确定',
+                            callback: action => {
+                                location.reload();
+                            }
+                        })
+                    } else {
+                        _this.$alert('删除失败', '消息', {
+                            confirmButtonText: '确定'
+                        })
+                    }
+                });
+            }
         },
         created() {
             const _this = this

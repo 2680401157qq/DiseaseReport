@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author: lshuang.SE
@@ -19,4 +20,6 @@ public interface PunchTableDao {
     int insertPunch(@Param("tableName") String tableName, @Param("data") List<String> data);
 
     List<String> getColumnNames(@Param("tableName") String tableName);
+
+    List<Map<String, Object>> selectPunchList(@Param(value = "sqlStr") String sqlStr);
 }

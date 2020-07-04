@@ -104,12 +104,12 @@
                         const _this = this;
                         axios.post('http://localhost:8001/diseasereport/user/edit', _this.ruleForm).then(function (response) {
                             if (response.data){
-                                _this.$alert('修改成功','消息',{
-                                    confirmButtonText:'确定',
-                                    callback:action => {
-                                        _this.$router.push('/usertable');
-                                    }
-                                })
+                                    _this.$alert('修改成功','消息',{
+                                        confirmButtonText:'确定',
+                                        callback:action => {
+                                            _this.$router.push('/usertable');
+                                        }
+                                    })
                             }else {
                                 _this.$alert('修改失败','消息',{
                                     confirmButtonText:'确定'
