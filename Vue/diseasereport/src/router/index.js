@@ -23,151 +23,154 @@ import PunchDetail from "../components/PunchDetail";
 Vue.use(VueRouter)
 
 const routes = [
-    {
-        path: "/login",
-        name: "登陆",
-        component: Login
-    },
-    {
-        path: "/",
-        name: "/",
-        component: Index,
-        children: [
-            {
-                path: "/userinfo",
-                name: "用户信息",
-                isShow: [true, false, false],
-                component: UserInfoForm,
-                icon: 'el-icon-user-solid'
-            },
-            {
-                path: "/health",
-                name: "健康打卡",
-                isShow: [true, true, false],
-                component: PunchEveryDay,
-                icon: 'el-icon-s-promotion'
-            },
-            {
-                path: "/punch",
-                name: "打卡管理",
-                isShow: [false, false, true],
-                component: PunchContainer,
-                icon: 'el-icon-s-promotion',
-                children: [
-                    {
-                        path: "/publish",
-                        name: "发布任务",
-                        component: PublishPunch,
-                        show: true,
-                    },
-                    {
-                        path: "/history",
-                        name: "任务历史",
-                        component: PunchHistory,
-                        show: true,
-                    },
-                    {
-                        path: "/detail",
-                        name: "打卡列表",
-                        component: PunchDetail,
-                        show: false,
-                    }
-                ]
-            },
-            {
-                path: "/disease",
-                name: "案例管理",
-                isShow: [false, true, true],
-                component: DiseaseContainer,
-                icon: 'el-icon-notebook-2',
-                children: [
-                    {
-                        path: "/diseasetable",
-                        name: "案例查看",
-                        component: DiseaseCaseTable,
-                        show: true,
-                        icon: 'el-icon-s-order'
-                    },
-                    {
-                        path: "/diseaseadd",
-                        name: "案例录入",
-                        component: DiseaseCaseAdd,
-                        show: true,
-                        icon: 'el-icon-edit-outline'
-                    }
-                ]
-            },
-            {
-                path: "/user",
-                name: "人员管理",
-                component: UserContainer,
-                isShow: [false, false, true],
-                icon: 'el-icon-user',
-                children: [
-                    {
-                        path: "/doctortable",
-                        name: "医生管理",
-                        show: true,
-                        component: DoctorTable,
-                        icon: 'el-icon-s-custom'
-                    },
-                    {
-                        path: "/usertable",
-                        name: "用户管理",
-                        show: true,
-                        component: UserTable,
-                        icon: 'el-icon-s-custom'
-                    },
-                    {
-                        path: "/useradd",
-                        name: "添加用户",
-                        show: false,
-                        component: UserAdd,
-                        icon: 'el-icon-zoom-in'
-                    },
-                    {
-                        path: "/doctoradd",
-                        name: "添加医生",
-                        show: false,
-                        component: DoctorAdd,
-                        icon: 'el-icon-zoom-in'
-                    },
-                    {
-                        path: "/useredit",
-                        name: "修改用户",
-                        show: false,
-                        component: UserEdit,
-                        icon: 'el-icon-s-claim'
-                    }
-                ]
-            },
-            {
-                path: "/data",
-                name: "统计分析",
-                //加一个xxContainer
-                component: DataContainer,
-                isShow: [false, true, true],
-                icon: 'el-icon-data-line',
-                children: [
-                    {
-                        path: '/getbyday',
-                        name: "日期查询",
-                        show: true,
-                        component: () => import('../views/Getbyday.vue'),
-                        icon: 'el-icon-date'
-                    },
-                    {
-                        path: '/getbyinstitute',
-                        name: '学院展示',
-                        show: true,
-                        component: () => import('../views/Getbyinstitute.vue'),
-                        icon: 'el-icon-school'
-                    },
-                ]
-            }
-        ]
-    }
-];
+        {
+            path: "/login",
+            name: "登陆",
+            component: Login
+        },
+        {
+            path: "/",
+            name: "/",
+            component: Index,
+            children: [
+                {
+                    path: "/userinfo",
+                    name: "用户信息",
+                    isShow: [true, false, false],
+                    component: UserInfoForm,
+                    icon: 'el-icon-user-solid'
+                },
+                {
+                    path: "/health",
+                    name: "健康打卡",
+                    isShow: [true, true, false],
+                    component: PunchEveryDay,
+                    icon: 'el-icon-s-promotion'
+                },
+                {
+                    path: "/punch",
+                    name: "打卡管理",
+                    isShow: [false, false, true],
+                    component: PunchContainer,
+                    icon: 'el-icon-s-promotion',
+                    children: [
+                        {
+                            path: "/publish",
+                            name: "发布任务",
+                            component: PublishPunch,
+                            show: true,
+                            icon: 'el-icon-upload2'
+                        },
+                        {
+                            path: "/history",
+                            name: "任务历史",
+                            component: PunchHistory,
+                            show: true,
+                            icon: 'el-icon-s-claim'
+                        },
+                        {
+                            path: "/detail",
+                            name: "打卡列表",
+                            component: PunchDetail,
+                            show: false,
+                        }
+                    ]
+                },
+                {
+                    path: "/disease",
+                    name: "案例管理",
+                    isShow: [false, true, true],
+                    component: DiseaseContainer,
+                    icon: 'el-icon-notebook-2',
+                    children: [
+                        {
+                            path: "/diseasetable",
+                            name: "案例查看",
+                            component: DiseaseCaseTable,
+                            show: true,
+                            icon: 'el-icon-s-order'
+                        },
+                        {
+                            path: "/diseaseadd",
+                            name: "案例录入",
+                            component: DiseaseCaseAdd,
+                            show: true,
+                            icon: 'el-icon-edit-outline'
+                        }
+                    ]
+                },
+                {
+                    path: "/user",
+                    name: "人员管理",
+                    component: UserContainer,
+                    isShow: [false, false, true],
+                    icon: 'el-icon-user',
+                    children: [
+                        {
+                            path: "/doctortable",
+                            name: "医生管理",
+                            show: true,
+                            component: DoctorTable,
+                            icon: 'el-icon-s-custom'
+                        },
+                        {
+                            path: "/usertable",
+                            name: "用户管理",
+                            show: true,
+                            component: UserTable,
+                            icon: 'el-icon-s-custom'
+                        },
+                        {
+                            path: "/useradd",
+                            name: "添加用户",
+                            show: false,
+                            component: UserAdd,
+                            icon: 'el-icon-zoom-in'
+                        },
+                        {
+                            path: "/doctoradd",
+                            name: "添加医生",
+                            show: false,
+                            component: DoctorAdd,
+                            icon: 'el-icon-zoom-in'
+                        },
+                        {
+                            path: "/useredit",
+                            name: "修改用户",
+                            show: false,
+                            component: UserEdit,
+                            icon: 'el-icon-s-claim'
+                        }
+                    ]
+                },
+                {
+                    path: "/data",
+                    name: "统计分析",
+                    //加一个xxContainer
+                    component: DataContainer,
+                    isShow: [false, true, true],
+                    icon: 'el-icon-data-line',
+                    children: [
+                        {
+                            path: '/getbyday',
+                            name: "日期查询",
+                            show: true,
+                            component: () => import('../views/Getbyday.vue'),
+                            icon: 'el-icon-date'
+                        },
+                        {
+                            path: '/getbyinstitute',
+                            name: '学院展示',
+                            show: true,
+                            component: () => import('../views/Getbyinstitute.vue'),
+                            icon: 'el-icon-school'
+                        },
+                    ]
+                }
+            ]
+        }
+    ]
+;
 
 const router = new VueRouter({
     mode: 'history',

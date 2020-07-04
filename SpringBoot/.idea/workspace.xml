@@ -31,6 +31,14 @@
       <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/dao/StuDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/entity/Healthful.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/service/HealthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/InsertAData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/TaskUpdateHealth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/TaskUpdateLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/TaskUpdateSerious.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/UpdateAHealthData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/UpdateALightData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/UpdateASeriousData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/task/task1.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/diseasereport/src/main/resources/mapper/StuMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/diseasereport_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/diseasereport_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
@@ -53,15 +61,38 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_2_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_2_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseasereport/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/DiseasereportApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/DiseasereportApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/main/java/cn/edu/scut/diseasereport/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diseasereport/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diseasereport/src/main/resources/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/main/resources/mapper/AdminMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/diseasereport/src/test/java/cn/edu/scut/diseasereport/AdminTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/test/java/cn/edu/scut/diseasereport/AdminTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diseasereport/src/test/java/cn/edu/scut/diseasereport/DiseasereportApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/diseasereport/src/test/java/cn/edu/scut/diseasereport/DiseasereportApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vue/diseasereport/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../Vue/diseasereport/src/views/About.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -105,7 +136,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/gitdesktop/DiseaseReport/SpringBoot" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -140,7 +171,28 @@
       <workItem from="1588948168443" duration="548000" />
       <workItem from="1589640034948" duration="4996000" />
       <workItem from="1589708042531" duration="5687000" />
-      <workItem from="1589783843749" duration="7896000" />
+      <workItem from="1589783843749" duration="8503000" />
+      <workItem from="1589884780972" duration="1506000" />
+      <workItem from="1589971609406" duration="6194000" />
+      <workItem from="1590038382836" duration="758000" />
+      <workItem from="1590054990168" duration="2137000" />
+      <workItem from="1590115047256" duration="1263000" />
+      <workItem from="1590132320633" duration="3901000" />
+      <workItem from="1590204791027" duration="1310000" />
+      <workItem from="1590228046372" duration="6236000" />
+      <workItem from="1590286780566" duration="1350000" />
+      <workItem from="1590334162566" duration="1232000" />
+      <workItem from="1590757172585" duration="1036000" />
+      <workItem from="1590930220939" duration="3887000" />
+      <workItem from="1591155737197" duration="783000" />
+      <workItem from="1591184732738" duration="1953000" />
+      <workItem from="1591255906357" duration="1853000" />
+      <workItem from="1593692911831" duration="3231000" />
+      <workItem from="1593708688630" duration="3104000" />
+      <workItem from="1593744301438" duration="5601000" />
+      <workItem from="1593778356554" duration="15152000" />
+      <workItem from="1593826367854" duration="5036000" />
+      <workItem from="1593862721017" duration="8406000" />
     </task>
     <servers />
   </component>
@@ -161,74 +213,92 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="546" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593864486030">
+      <screen x="93" y="0" width="1443" height="864" />
+    </state>
+    <state x="546" y="187" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/93.0.1443.864@93.0.1443.864" timestamp="1593864486030" />
+    <state x="569" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593709376790">
+      <screen x="93" y="0" width="1443" height="864" />
+    </state>
+    <state x="569" y="235" key="#com.intellij.fileTypes.FileTypeChooser/93.0.1443.864@93.0.1443.864" timestamp="1593709376790" />
     <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589810487177">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
     <state x="295" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/93.0.1443.864@93.0.1443.864" timestamp="1589810487177" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588948061543">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="609" y="175" key="FileChooserDialogImpl" timestamp="1593779492521">
+      <screen x="93" y="0" width="1443" height="864" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588948061543" />
-    <state width="1401" height="277" key="GridCell.Tab.0.bottom" timestamp="1589815799686">
+    <state x="609" y="175" key="FileChooserDialogImpl/93.0.1443.864@93.0.1443.864" timestamp="1593779492521" />
+    <state width="1401" height="223" key="GridCell.Tab.0.bottom" timestamp="1593866652895">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.0.bottom/93.0.1443.864@93.0.1443.864" timestamp="1589815799686" />
-    <state width="1401" height="277" key="GridCell.Tab.0.center" timestamp="1589815799686">
+    <state width="1401" height="223" key="GridCell.Tab.0.bottom/93.0.1443.864@93.0.1443.864" timestamp="1593866652895" />
+    <state width="1401" height="223" key="GridCell.Tab.0.center" timestamp="1593866652895">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.0.center/93.0.1443.864@93.0.1443.864" timestamp="1589815799686" />
-    <state width="1401" height="277" key="GridCell.Tab.0.left" timestamp="1589815799686">
+    <state width="1401" height="223" key="GridCell.Tab.0.center/93.0.1443.864@93.0.1443.864" timestamp="1593866652895" />
+    <state width="1401" height="223" key="GridCell.Tab.0.left" timestamp="1593866652894">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.0.left/93.0.1443.864@93.0.1443.864" timestamp="1589815799686" />
-    <state width="1401" height="277" key="GridCell.Tab.0.right" timestamp="1589815799686">
+    <state width="1401" height="223" key="GridCell.Tab.0.left/93.0.1443.864@93.0.1443.864" timestamp="1593866652894" />
+    <state width="1401" height="223" key="GridCell.Tab.0.right" timestamp="1593866652895">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.0.right/93.0.1443.864@93.0.1443.864" timestamp="1589815799686" />
-    <state width="1401" height="277" key="GridCell.Tab.1.bottom" timestamp="1589815799488">
+    <state width="1401" height="223" key="GridCell.Tab.0.right/93.0.1443.864@93.0.1443.864" timestamp="1593866652895" />
+    <state width="1401" height="277" key="GridCell.Tab.1.bottom" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.1.bottom/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state width="1401" height="277" key="GridCell.Tab.1.center" timestamp="1589815799487">
+    <state width="1401" height="277" key="GridCell.Tab.1.bottom/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.1.center" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.1.center/93.0.1443.864@93.0.1443.864" timestamp="1589815799487" />
-    <state width="1401" height="277" key="GridCell.Tab.1.left" timestamp="1589815799487">
+    <state width="1401" height="277" key="GridCell.Tab.1.center/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.1.left" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.1.left/93.0.1443.864@93.0.1443.864" timestamp="1589815799487" />
-    <state width="1401" height="277" key="GridCell.Tab.1.right" timestamp="1589815799488">
+    <state width="1401" height="277" key="GridCell.Tab.1.left/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.1.right" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.1.right/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state width="1401" height="277" key="GridCell.Tab.2.bottom" timestamp="1589815799488">
+    <state width="1401" height="277" key="GridCell.Tab.1.right/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.2.bottom" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.2.bottom/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state width="1401" height="277" key="GridCell.Tab.2.center" timestamp="1589815799488">
+    <state width="1401" height="277" key="GridCell.Tab.2.bottom/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.2.center" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.2.center/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state width="1401" height="277" key="GridCell.Tab.2.left" timestamp="1589815799488">
+    <state width="1401" height="277" key="GridCell.Tab.2.center/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.2.left" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.2.left/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state width="1401" height="277" key="GridCell.Tab.2.right" timestamp="1589815799488">
+    <state width="1401" height="277" key="GridCell.Tab.2.left/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state width="1401" height="277" key="GridCell.Tab.2.right" timestamp="1593799057952">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state width="1401" height="277" key="GridCell.Tab.2.right/93.0.1443.864@93.0.1443.864" timestamp="1589815799488" />
-    <state x="327" y="0" key="SettingsEditor" timestamp="1589811475144">
+    <state width="1401" height="277" key="GridCell.Tab.2.right/93.0.1443.864@93.0.1443.864" timestamp="1593799057952" />
+    <state x="346" y="87" key="Maven.ArtifactSearchDialog" timestamp="1593789905140">
+      <screen x="93" y="0" width="1443" height="864" />
+    </state>
+    <state x="346" y="87" key="Maven.ArtifactSearchDialog/93.0.1443.864@93.0.1443.864" timestamp="1593789905140" />
+    <state x="327" y="0" key="SettingsEditor" timestamp="1593693316369">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588948120918" />
-    <state x="327" y="0" key="SettingsEditor/93.0.1443.864@93.0.1443.864" timestamp="1589811475144" />
-    <state x="496" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1589783901876">
+    <state x="327" y="0" key="SettingsEditor/93.0.1443.864@93.0.1443.864" timestamp="1593693316369" />
+    <state x="496" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1593862738261">
       <screen x="93" y="0" width="1443" height="864" />
     </state>
-    <state x="496" y="256" key="com.intellij.ide.util.TipDialog/93.0.1443.864@93.0.1443.864" timestamp="1589783901876" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588948046267">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="496" y="256" key="com.intellij.ide.util.TipDialog/93.0.1443.864@93.0.1443.864" timestamp="1593862738261" />
+    <state x="546" y="197" key="extract.method.dialog" timestamp="1593864596983">
+      <screen x="93" y="0" width="1443" height="864" />
+    </state>
+    <state x="546" y="197" key="extract.method.dialog/93.0.1443.864@93.0.1443.864" timestamp="1593864596983" />
+    <state x="498" y="152" width="672" height="711" key="search.everywhere.popup" timestamp="1593798643897">
+      <screen x="93" y="0" width="1443" height="864" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1588948046267" />
+    <state x="498" y="152" width="672" height="711" key="search.everywhere.popup/93.0.1443.864@93.0.1443.864" timestamp="1593798643897" />
   </component>
 </project>

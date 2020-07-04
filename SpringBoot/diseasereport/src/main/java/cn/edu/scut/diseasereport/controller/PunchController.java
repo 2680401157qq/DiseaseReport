@@ -7,7 +7,10 @@ import cn.edu.scut.diseasereport.service.PunchTableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,11 +28,19 @@ public class PunchController {
     List<String> temp = new ArrayList<>();
 
     @RequestMapping(value = "/publish", method = RequestMethod.POST)
-    public boolean publishPunch(@RequestBody List<String> punchList) {
-        temp.clear();
-        temp.addAll(1, punchList);
-        mPunchTableListService.insertPunchTableName(punchList.get(0), 1);
-        return mPunchTableService.createPunchTable(punchList.get(0), temp);
+    public int publishPunch(@RequestBody String[] punchList) {
+        temp = Arrays.asList(punchList);;
+        // 使用当前时间作为表名
+        Date date = new Date();//获取当前的日期
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");//设置日期格式
+        String tableName = df.format(date);
+
+        try {
+            mPunchTableListService.insertPunchTableName(tableName, 1);
+            return mPunchTableService.createPunchTable(tableName, temp);
+        } catch (Exception e) {
+            return 0;
+        }
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)

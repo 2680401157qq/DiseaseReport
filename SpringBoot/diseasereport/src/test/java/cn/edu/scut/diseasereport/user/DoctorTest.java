@@ -1,3 +1,4 @@
+
 package cn.edu.scut.diseasereport.user;
 
 import cn.edu.scut.diseasereport.entity.Doctor;
@@ -46,3 +47,4 @@ public class DoctorTest {
         System.out.println(doctorList);
     }
 }
+

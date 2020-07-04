@@ -5,7 +5,7 @@ nu<template>
     <el-date-picker
       v-model="value2"
       @change="getTime"
-      value-format="yyyyMMdd"
+      value-format="yyyy-MM-dd"
       align="right"
       type="date"
       placeholder="选择日期"
@@ -53,9 +53,9 @@ var echarts = require('echarts');
           }]
         },
         value2: '',
-        health: [150, 232, 201, 154, 190, 330, 410],
-        ser:[20, 32, 31, 34, 40, 30, 40],
-        light: [100, 82, 91, 94, 90, 90, 80],
+        health: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        ser:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        light: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       };
       
     },
@@ -106,8 +106,16 @@ var echarts = require('echarts');
                 tooltip: {
                   trigger: 'axis'
                 },
+                dataZoom: {
+                  show: true,
+                  realtime: true,
+                  y: 36,
+                  height: 20,
+                  start: 20,
+                  end: 80
+                },
                 legend: {
-                  data: ['严重', '轻微', '健康']
+                  data: ['甲', '乙', '丙']
                 },
                 grid: {
                   left: '3%',
@@ -123,26 +131,32 @@ var echarts = require('echarts');
                 xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['1学院', '2学院', '3学院', '4学院', '5学院', '6学院', '7学院']
+                data: [
+            "机械与汽车工程学院", "建筑学院", "土木与交通学院", "电子与信息学院", "材料科学与工程学院", "化学与化工学院",
+            "轻工科学与工程学院", "食品科学与工程学院", "数学学院", "物理与光电学院", "经济与贸易学院",
+            "自动化科学与工程学院", "计算机科学与工程学院", "电力学院", "生物科学与工程学院", "环境与能源学院",
+            "软件学院", "工商管理学院", "公共管理学院", "马克思主义学院", "外国语学院", "法学院", "新闻与传播学院",
+            "艺术学院", "体育学院", "设计学院"
+        ]
                 },
                 yAxis: {
                     type: 'value'
                 },
                 series: [
                 {
-                    name: '严重',
+                    name: '甲',
                     type: 'line',
                     stack: '总量',
                     data: this.ser,
                 },
                 {
-                    name: '轻微',
+                    name: '乙',
                     type: 'line',
                     stack: '总量',
                     data: this.light,
                 },
                 {
-                    name: '健康',
+                    name: '丙',
                     type: 'line',
                     stack: '总量',
                     data: this.health,

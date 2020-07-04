@@ -16,7 +16,7 @@ public interface PunchTableListService {
      *
      * @param tableName
      */
-    boolean insertPunchTableName(String tableName, int state);
+    int insertPunchTableName(String tableName, int state);
 
     /**
      * 获取打卡表名称列表
