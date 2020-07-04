@@ -15,7 +15,7 @@ public class DiseaseCase {
 
     private User user;
 
-    private char diseaseLevel;
+    private String diseaseLevel;
 
     private String diseaseName;
 

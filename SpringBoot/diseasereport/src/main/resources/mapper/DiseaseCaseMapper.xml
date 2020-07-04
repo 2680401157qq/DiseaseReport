@@ -59,10 +59,10 @@
     <update id="updateDiseaseCase" parameterType="cn.edu.scut.diseasereport.entity.DiseaseCase">
         update disease_case
         <set>
-            <if test="disease_level != null and disease_level != ''">
+            <if test="diseaseLevel != null and diseaseLevel != ''">
                 disease_level = #{diseaseLevel},
             </if>
-            <if test="disease_name != null and disease_name != ''">
+            <if test="diseaseName != null and diseaseName != ''">
                 disease_name = #{diseaseName},
             </if>
             <if test="remark != null and remark != ''">

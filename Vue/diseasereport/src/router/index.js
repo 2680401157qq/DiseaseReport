@@ -35,12 +35,14 @@ const routes = [
                 path: "/userinfo",
                 name: "用户信息",
                 isShow: [true, false, false],
-                component: UserInfoForm
+                component: UserInfoForm,
+                icon: 'el-icon-user-solid'
             },
             {
                 path: "/health",
                 name: "健康打卡",
                 isShow: [true, true, false],
+                icon: 'el-icon-s-promotion'
             },
             {
                 path: "/punch",
@@ -67,18 +69,21 @@ const routes = [
                 name: "案例管理",
                 isShow: [false, true, true],
                 component: DiseaseContainer,
+                icon: 'el-icon-notebook-2',
                 children: [
                     {
                         path: "/diseasetable",
                         name: "案例查看",
                         component: DiseaseCaseTable,
                         show: true,
+                        icon: 'el-icon-s-order'
                     },
                     {
                         path: "/diseaseadd",
                         name: "案例录入",
                         component: DiseaseCaseAdd,
                         show: true,
+                        icon: 'el-icon-edit-outline'
                     }
                 ]
             },
@@ -87,36 +92,42 @@ const routes = [
                 name: "人员管理",
                 component: UserContainer,
                 isShow: [false, false, true],
+                icon: 'el-icon-user',
                 children: [
                     {
                         path: "/doctortable",
                         name: "医生管理",
                         show: true,
-                        component: DoctorTable
+                        component: DoctorTable,
+                        icon: 'el-icon-s-custom'
                     },
                     {
                         path: "/usertable",
                         name: "用户管理",
                         show: true,
-                        component: UserTable
+                        component: UserTable,
+                        icon: 'el-icon-s-custom'
                     },
                     {
                         path: "/useradd",
                         name: "添加用户",
                         show: false,
-                        component: UserAdd
+                        component: UserAdd,
+                        icon: 'el-icon-zoom-in'
                     },
                     {
                         path: "/doctoradd",
                         name: "添加医生",
                         show: false,
-                        component: DoctorAdd
+                        component: DoctorAdd,
+                        icon: 'el-icon-zoom-in'
                     },
                     {
                         path: "/useredit",
                         name: "修改用户",
                         show: false,
-                        component: UserEdit
+                        component: UserEdit,
+                        icon: 'el-icon-s-claim'
                     }
                 ]
             },
@@ -126,18 +137,21 @@ const routes = [
                 //加一个xxContainer
                 component: DataContainer,
                 isShow: [false, true, true],
+                icon: 'el-icon-data-line',
                 children: [
                     {
                         path: '/getbyday',
                         name: "日期查询",
                         show: true,
-                        component: () => import('../views/Getbyday.vue')
+                        component: () => import('../views/Getbyday.vue'),
+                        icon: 'el-icon-date'
                     },
                     {
                         path: '/getbyinstitute',
                         name: '学院展示',
                         show: true,
-                        component: () => import('../views/Getbyinstitute.vue')
+                        component: () => import('../views/Getbyinstitute.vue'),
+                        icon: 'el-icon-school'
                     },
                 ]
             }
