@@ -6,18 +6,19 @@
             </el-form-item>
             <el-form-item label="学院" v-show="isUserFilterOn">
                 <el-select v-model="filterInfo.institute" clearable>
-                    <el-option v-for="item in institute" :label="item" :value="item"></el-option>
+                    <el-option v-for="item in institute" :label="item" :value="item" :key="item"></el-option>
                 </el-select>
             </el-form-item>
             <el-form-item label="专业" v-show="isUserFilterOn">
                 <el-select v-model="filterInfo.major" clearable>
                     <div v-if="filterInfo.institute === ''">
                         <div v-for="item in major">
-                            <el-option v-for="subitem in item" :label="subitem" :value="subitem"></el-option>
+                            <el-option v-for="subitem in item" :label="subitem" :value="subitem" :key="subitem"></el-option>
                         </div>
                     </div>
                     <div v-else>
-                        <el-option v-for="item in major[institute.indexOf(filterInfo.institute)]" :label="item" :value="item"></el-option>
+                        <el-option v-for="item in major[institute.indexOf(filterInfo.institute)]" :key="item"
+                                   :label="item" :value="item"></el-option>
                     </div>
                 </el-select>
             </el-form-item>
@@ -29,7 +30,7 @@
             </el-form-item>
             <el-form-item label="等级" v-show="isCaseFilterOn">
                 <el-select v-model="filterInfo.diseaseLevel" clearable>
-                    <el-option v-for="item in diseaseLevel" :label="item" :value="item"></el-option>
+                    <el-option v-for="item in diseaseLevel" :label="item" :value="item" :key="item"></el-option>
                 </el-select>
             </el-form-item>
             <el-form-item>
