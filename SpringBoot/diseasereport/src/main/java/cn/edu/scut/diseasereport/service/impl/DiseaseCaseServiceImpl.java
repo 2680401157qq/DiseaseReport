@@ -34,7 +34,7 @@ public class DiseaseCaseServiceImpl implements DiseaseCaseService {
     @Transactional(rollbackFor = RuntimeException.class)
     @Override
     public int updateDiseaseCase(DiseaseCase diseaseCase) {
-        if (diseaseCase == null || diseaseCase.getId() == null || diseaseCase.getUser().getId() == null) {
+        if (diseaseCase == null || diseaseCase.getUser().getId() == null) {
             return 0;
         }
         int result = diseaseCaseDao.updateDiseaseCase(diseaseCase);

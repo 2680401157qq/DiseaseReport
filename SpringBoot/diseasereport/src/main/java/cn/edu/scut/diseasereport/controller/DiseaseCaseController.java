@@ -40,6 +40,7 @@ public class DiseaseCaseController {
         int pageNo = Integer.parseInt(request.getParameter("page_no"));
         int pageSize = Integer.parseInt(request.getParameter("page_size"));
         PageInfo<DiseaseCase> page = diseaseCaseService.selectDiseaseCase(params, pageNo, pageSize);
+
         return page;
     }
 

@@ -12,7 +12,11 @@ let config = {
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
+<<<<<<< Updated upstream
   baseURL: 'http://localhost:8001/diseasereport/'
+=======
+  baseURL: 'http://localhost:8001/diseasereport'
+>>>>>>> Stashed changes
 };
 
 const _axios = axios.create(config);
