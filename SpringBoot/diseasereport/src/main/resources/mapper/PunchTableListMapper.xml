@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.scut.diseasereport.dao.PunchTableListDao">
+
+    <insert id="insertPunchTableName" parameterType="map">
+        insert into punchlist values ('${tableName}',${state},NOW());
+    </insert>
+
+    <select id="getPunchTableNameList" resultType="PunchHistory">
+        select * from punchlist;
+    </select>
+
+    <update id="stopPunch">
+        update punchlist set state='0' where `name`='${tableName}'; 
+    </update>
+
+    <update id="activePunch">
+        update punchlist set state='1' where `name`='${tableName}'; 
+    </update>
+
+    <delete id="deletePunch" parameterType="map">
+        delete from doctor where `name`='${tableName}';
+    </delete>
+
+    <select id="getActivePunch" resultType="String">
+        select `name` from punchlist where state=1;
+    </select>
+</mapper>
+
+

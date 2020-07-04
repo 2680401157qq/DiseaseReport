@@ -8,12 +8,28 @@ import java.util.List;
  * @description:
  */
 public interface PunchTableService {
-    
+
     /**
      * 创建打卡表
      *
      * @param tableName
      * @param columns
      */
-    public void createPunchTable(String tableName, List<String> columns);
+    public boolean createPunchTable(String tableName, List<String> columns);
+
+    /**
+     * 停止打卡
+     *
+     * @param tableName
+     */
+    public boolean deletePunchTable(String tableName);
+
+    /**
+     * 插入数据
+     *
+     * @param tableName 要插入的表的名字
+     * @param data      要插入的数据
+     * @return
+     */
+    public boolean insertPunch(String tableName, List<String> data);
 }

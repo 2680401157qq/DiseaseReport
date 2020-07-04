@@ -11,6 +11,19 @@
         </foreach>
         )
     </update>
+
+    <update id="deletePunchTable">
+        drop table ${tableName}
+    </update>
+
+    <insert id="insertPunch" parameterType="map">
+        insert into ${tableName} values (NOW(),
+        <foreach collection="data" item="dataItem" separator=",">
+            '${dataItem}'
+        </foreach>
+        )
+    </insert>
+    
 </mapper>
 
 

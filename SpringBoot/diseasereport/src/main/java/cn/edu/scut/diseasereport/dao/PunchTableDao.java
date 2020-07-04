@@ -12,5 +12,9 @@ import java.util.List;
  */
 @Mapper
 public interface PunchTableDao {
-    void createPunchTable(@Param("tableName") String tableName, @Param("columns") List<String> columns);
+    int createPunchTable(@Param("tableName") String tableName, @Param("columns") List<String> columns);
+
+    int deletePunchTable(@Param("tableName") String tableName);
+
+    int insertPunch(@Param("tableName") String tableName, @Param("data") List<String> data);
 }

@@ -14,7 +14,9 @@ import DoctorAdd from "../components/DoctorAdd";
 import DataContainer from "../components/DataCotainer";
 import Login from "../components/Login";
 import UserInfoForm from "../components/UserInfoForm";
-import publishPunch from "../components/publishPunch";
+import PunchContainer from "../components/PunchContainer";
+import PunchHistory from "../components/PunchHisoryTable";
+import PublishPunch from "../components/PublishPunch";
 
 Vue.use(VueRouter);
 
@@ -38,7 +40,27 @@ const routes = [
             {
                 path: "/health",
                 name: "健康打卡",
-                isShow: [true, true, true],
+                isShow: [true, true, false],
+            },
+            {
+                path: "/punch",
+                name: "打卡管理",
+                isShow: [false, false, true],
+                component: PunchContainer,
+                children: [
+                    {
+                        path: "/publish",
+                        name: "发布任务",
+                        component: PublishPunch,
+                        show: true,
+                    },
+                    {
+                        path: "/history",
+                        name: "任务历史",
+                        component: PunchHistory,
+                        show: true,
+                    }
+                ]
             },
             {
                 path: "/disease",
@@ -77,12 +99,6 @@ const routes = [
                         name: "用户管理",
                         show: true,
                         component: UserTable
-                    },
-                    {
-                        path: "/publish",
-                        name: "发布打卡",
-                        show: true,
-                        component: publishPunch
                     },
                     {
                         path: "/useradd",

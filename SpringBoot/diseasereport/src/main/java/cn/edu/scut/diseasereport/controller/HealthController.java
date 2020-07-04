@@ -19,16 +19,19 @@ import java.util.List;
 public class HealthController {
     @Autowired
     private HealthService healthService;
-    @RequestMapping(value="/data",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/data", method = RequestMethod.GET)
     public List<Healthful> getHData() {
         return healthService.getHData();
     }
-    @RequestMapping(value="/data/getbyinstitute",method = RequestMethod.GET)
-    public Healthful getByInstitute(@RequestParam String institute){
+
+    @RequestMapping(value = "/data/getbyinstitute", method = RequestMethod.GET)
+    public Healthful getByInstitute(@RequestParam String institute) {
         return healthService.getByInstitute(institute);
     }
-    @RequestMapping(value = "/data/getbyday",method = RequestMethod.GET)
-    public Healthful getByDay(@RequestParam String day){
+
+    @RequestMapping(value = "/data/getbyday", method = RequestMethod.GET)
+    public Healthful getByDay(@RequestParam String day) {
         return healthService.getByDay(day);
     }
 }

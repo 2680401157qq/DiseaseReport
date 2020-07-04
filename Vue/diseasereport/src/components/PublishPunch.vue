@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "publishPunch"
+        name: "PublishPunch"
     }
 </script>
 
