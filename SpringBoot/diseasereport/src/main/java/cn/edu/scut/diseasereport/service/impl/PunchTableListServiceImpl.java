@@ -24,8 +24,8 @@ public class PunchTableListServiceImpl implements PunchTableListService {
         int i = mPunchTableListDao.insertPunchTableName(tableName, state);
         List<PunchHistory> punchTableNameList = mPunchTableListDao.getPunchTableNameList();
         for (PunchHistory punchHistory : punchTableNameList) {
-            if (!punchHistory.getPunchName().equals(tableName)) {
-                mPunchTableListDao.stopPunch(punchHistory.getPunchName());
+            if (!punchHistory.getName().equals(tableName)) {
+                mPunchTableListDao.stopPunch(punchHistory.getName());
             }
         }
         return SqlUtils.isOperationSuccess(i);

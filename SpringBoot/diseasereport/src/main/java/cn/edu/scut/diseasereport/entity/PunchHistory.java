@@ -2,8 +2,6 @@ package cn.edu.scut.diseasereport.entity;
 
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * @author: lshuang.SE
  * @date: 2020/7/4 15:22
@@ -11,7 +9,7 @@ import java.util.Date;
  */
 @Data
 public class PunchHistory {
-    private String punchName;
+    private String name;
     private int state;
-    private Date date;
+    private String date;
 }

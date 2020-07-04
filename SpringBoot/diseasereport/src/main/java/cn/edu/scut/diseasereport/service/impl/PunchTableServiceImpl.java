@@ -35,4 +35,10 @@ public class PunchTableServiceImpl implements PunchTableService {
         int i = mPunchTableDao.insertPunch(tableName, data);
         return SqlUtils.isOperationSuccess(i);
     }
+
+    @Override
+    public List<String> getColumnNames(String tableName) {
+        List<String> columnNames = mPunchTableDao.getColumnNames(tableName);
+        return columnNames;
+    }
 }

@@ -17,4 +17,6 @@ public interface PunchTableDao {
     int deletePunchTable(@Param("tableName") String tableName);
 
     int insertPunch(@Param("tableName") String tableName, @Param("data") List<String> data);
+
+    List<String> getColumnNames(@Param("tableName") String tableName);
 }

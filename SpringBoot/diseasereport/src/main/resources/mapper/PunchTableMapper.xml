@@ -23,7 +23,10 @@
         </foreach>
         )
     </insert>
-    
+
+    <select id="getColumnNames" resultType="java.lang.String">
+        select DISTINCT COLUMN_NAME from information_schema.COLUMNS where table_name = #{tableName}
+    </select>
 </mapper>
 
 

@@ -17,6 +17,7 @@ import DataContainer from "../components/DataContainer";
 import PunchContainer from "../components/PunchContainer";
 import PunchHistory from "../components/PunchHisoryTable";
 import PublishPunch from "../components/PublishPunch";
+import PunchEveryDay from "../components/PunchEveryDay";
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,7 @@ const routes = [
                 path: "/health",
                 name: "健康打卡",
                 isShow: [true, true, false],
+                component: PunchEveryDay,
                 icon: 'el-icon-s-promotion'
             },
             {
@@ -49,6 +51,7 @@ const routes = [
                 name: "打卡管理",
                 isShow: [false, false, true],
                 component: PunchContainer,
+                icon: 'el-icon-s-promotion',
                 children: [
                     {
                         path: "/publish",

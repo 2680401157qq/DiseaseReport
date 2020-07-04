@@ -4,25 +4,25 @@
         <el-table
                 :data="tableData"
                 border
-                style="width: 441px;margin: 15px auto;">
+                style="width: auto;margin: 15px auto;">
             <el-table-column
                     prop="id"
                     label="账号"
-                    width="140">
+                    width="auto">
             </el-table-column>
             <el-table-column
                     prop="name"
                     label="姓名"
-                    width="100">
+                    width="auto">
             </el-table-column>
             <el-table-column
                     prop="sex"
                     label="性别"
-                    width="80">
+                    width="auto">
             </el-table-column>
             <el-table-column
                     label="操作"
-                    width="120">
+                    width="auto">
                 <template slot-scope="scope">
                     <el-button @click="edit(scope.row)" type="text" size="small">修改</el-button>
                     <el-button @click="deleteById(scope.row)" type="text" size="small">删除</el-button>
@@ -81,7 +81,6 @@
                 })
             }
         },
-
         created() {
             const _this = this
             axios.get('http://localhost:8001/diseasereport/doctor/get/list?pageNum=1&pageSize=10').then(function (response) {

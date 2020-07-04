@@ -32,4 +32,6 @@ public interface PunchTableService {
      * @return
      */
     public boolean insertPunch(String tableName, List<String> data);
+
+    public List<String> getColumnNames(String tableName);
 }

@@ -5,7 +5,7 @@
                 <el-col :span="8">
                     <el-image :src="require('../assets/logo.jpg')" class="el-header-image"></el-image>
                 </el-col>
-                <el-col :span="4" :offset="2">
+                <el-col :span="4" :offset="4">
                     <el-image :src="require('../assets/title.jpg')" class="el-header-image"></el-image>
                 </el-col>
             </el-row>

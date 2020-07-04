@@ -1,5 +1,6 @@
 package cn.edu.scut.diseasereport.user;
 
+import cn.edu.scut.diseasereport.entity.PunchHistory;
 import cn.edu.scut.diseasereport.service.PunchTableListService;
 import cn.edu.scut.diseasereport.service.PunchTableService;
 import org.junit.jupiter.api.Test;
@@ -42,13 +43,13 @@ public class PunchTest {
         //mPunchTableListService.insertPunchTableName("test3", 1);
         //mPunchTableListService.insertPunchTableName("test4", 1);
         mPunchTableListService.insertPunchTableName("test5", 1);
-        List<String> punchTableNameList = mPunchTableListService.getPunchTableNameList();
+        List<PunchHistory> punchTableNameList = mPunchTableListService.getPunchTableNameList();
         System.out.println(punchTableNameList);
     }
 
     @Test
     public void getPunchTableListTest() {
-        List<String> punchTableNameList = mPunchTableListService.getPunchTableNameList();
+        List<PunchHistory> punchTableNameList = mPunchTableListService.getPunchTableNameList();
         System.out.println(punchTableNameList);
     }
 

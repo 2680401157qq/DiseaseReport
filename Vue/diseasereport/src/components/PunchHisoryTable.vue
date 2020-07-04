@@ -1,27 +1,26 @@
 <template>
-    <el-main>
-        <el-button @click="addUser()" type="primary" plain icon="el-icon-circle-plus-outline">新增</el-button>
+    <div style="width: auto;margin: 0 auto">
         <el-table
                 :data="tableData"
                 border
                 style="width: 100%;margin-top: 15px">
             <el-table-column
-                    prop="id"
+                    prop="name"
                     label="名称"
-                    width="140">
+                    width="auto">
             </el-table-column>
             <el-table-column
                     prop="state"
                     label="状态"
-                    width="140">
+                    width="auto">
             </el-table-column>
             <el-table-column
                     prop="date"
                     label="发布时间"
-                    width="100">
+                    width="auto">
             </el-table-column>
         </el-table>
-    </el-main>
+    </div>
 </template>
 
 <script>
@@ -29,8 +28,19 @@
         name: "PunchHistory",
         data() {
             return {
-                tableData:[]
+                tableData: []
             };
+        },
+        created() {
+            const _this = this
+            axios.get('http://localhost:8001/diseasereport/punch/list').then(function (response) {
+                console.log(response);
+                let dataList = response.data;
+                for (let i = 0; i < dataList.length; i++) {
+                    dataList[i].state = (dataList[i].state == '1' ? "正在进行" : "已结束");
+                }
+                _this.tableData = dataList;
+            })
         }
     }
 </script>

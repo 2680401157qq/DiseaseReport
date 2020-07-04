@@ -53,4 +53,10 @@ public class PunchController {
         return mPunchTableService.insertPunch(activePunch, data);
     }
 
+    @RequestMapping(value = "/items")
+    public List<String> getPunchColumns() {
+        String activePunch = mPunchTableListService.getActivePunch();
+        List<String> columnNames = mPunchTableService.getColumnNames(activePunch);
+        return columnNames;
+    }
 }
