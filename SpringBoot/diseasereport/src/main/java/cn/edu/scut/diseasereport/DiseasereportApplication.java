@@ -2,8 +2,10 @@ package cn.edu.scut.diseasereport;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 public class DiseasereportApplication {
 
     public static void main(String[] args) {

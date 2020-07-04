@@ -8,10 +8,7 @@ package cn.edu.scut.diseasereport.controller;/*
 import cn.edu.scut.diseasereport.entity.Healthful;
 import cn.edu.scut.diseasereport.service.HealthService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,16 +16,21 @@ import java.util.List;
 public class HealthController {
     @Autowired
     private HealthService healthService;
+
     @RequestMapping(value="/data",method = RequestMethod.GET)
-    public List<Healthful> getHData() {
-        return healthService.getHData();
+    public List<Healthful> getHData(@RequestParam String day) {
+        return healthService.getHData(day);
     }
-    @RequestMapping(value="/data/getbyinstitute",method = RequestMethod.GET)
-    public Healthful getByInstitute(@RequestParam String institute){
+
+    @RequestMapping(value="/getbyinstitute",method = RequestMethod.GET)
+    public List<Healthful> getByInstitute(@RequestParam String institute){
         return healthService.getByInstitute(institute);
     }
-    @RequestMapping(value = "/data/getbyday",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/getbyday",method = RequestMethod.GET)
     public Healthful getByDay(@RequestParam String day){
         return healthService.getByDay(day);
     }
+
+
 }

@@ -15,13 +15,13 @@ import java.util.List;
 @Service
 public class HealthService {
     @Autowired
-    private StuDao stuDao;
+    StuDao stuDao;
 
-    public List<Healthful> getHData() {
-        return stuDao.getHData();
+    public List<Healthful> getHData(String day) {
+        return stuDao.getHData(day);
     }
 
-    public Healthful getByInstitute(String institute) { return stuDao.getByInstitute(institute);}
+    public List<Healthful> getByInstitute(String institute) { return stuDao.getByInstitute(institute);}
 
     public Healthful getByDay(String day) {return stuDao.getByDay(day);}
 }
