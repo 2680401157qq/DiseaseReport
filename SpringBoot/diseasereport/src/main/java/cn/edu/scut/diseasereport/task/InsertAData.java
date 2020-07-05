@@ -21,7 +21,7 @@ public class InsertAData {
     @Autowired
     StuDao studao;
 
-    @Scheduled(cron = "10 0 12 * * ?")
+    @Scheduled(cron = "5 * * * * ?")
     public void taskInsertAData(){
         int size=26;
         String[] insList = new String[size];

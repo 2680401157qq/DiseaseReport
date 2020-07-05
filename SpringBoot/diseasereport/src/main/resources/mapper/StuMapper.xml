@@ -15,7 +15,4 @@
     <select id="getSource" resultType="Healthful">
         select level, count(*) from disease_case group by level
     </select>
-    <insert id="insertSumdata" parameterType="String">
-        insert into sumdata (healthNum,day) select count(*),time from disease_case where level="health" and time="20200704"
-    </insert>
 </mapper>

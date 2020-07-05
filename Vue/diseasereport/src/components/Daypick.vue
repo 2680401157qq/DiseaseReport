@@ -5,7 +5,7 @@ nu<template>
     <el-date-picker
       v-model="value2"
       @change="getTime"
-      value-format="yyyy-MM-dd"
+      value-format="yyyyMMdd"
       align="right"
       type="date"
       placeholder="选择日期"
