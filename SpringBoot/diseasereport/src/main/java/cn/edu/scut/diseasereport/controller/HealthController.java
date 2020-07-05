@@ -10,6 +10,8 @@ import cn.edu.scut.diseasereport.service.HealthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.crypto.Data;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
@@ -19,7 +21,15 @@ public class HealthController {
 
     @RequestMapping(value="/data",method = RequestMethod.GET)
     public List<Healthful> getHData(@RequestParam String day) {
-        return healthService.getHData(day);
+
+        StringBuffer stringBuilder1=new StringBuffer(day);
+        stringBuilder1.insert(6,"-");
+        stringBuilder1.insert(4,"-");
+
+
+        String aday=stringBuilder1.toString();
+
+        return healthService.getHData(aday);
     }
 
     @RequestMapping(value="/getbyinstitute",method = RequestMethod.GET)
@@ -29,7 +39,15 @@ public class HealthController {
 
     @RequestMapping(value = "/getbyday",method = RequestMethod.GET)
     public Healthful getByDay(@RequestParam String day){
-        return healthService.getByDay(day);
+
+
+        StringBuffer stringBuilder1=new StringBuffer(day);
+        stringBuilder1.insert(6,"-");
+        stringBuilder1.insert(4,"-");
+
+        String aday=stringBuilder1.toString();
+
+        return healthService.getByDay(aday);
     }
 
 
