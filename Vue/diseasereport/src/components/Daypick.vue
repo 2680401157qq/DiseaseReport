@@ -75,11 +75,45 @@ var echarts = require('echarts');
                 console.log(Response.data);
                 console.log(Response.data[1].healthNum);
                 var i=0;
-                //var health = [];
+                var institute=new Array();
+                 
+               
+                institute[0]="机械与汽车工程学院";
+                institute[1]="建筑学院";
+                institute[2]="土木与交通学院"
+                institute[3]="电子与信息学院";
+                institute[4]="材料科学与工程学院"
+                institute[5]="化学与化工学院"
+                institute[6]="轻工科学与工程学院"
+                institute[7]="食品科学与工程学院"
+                institute[8]="数学学院"
+                institute[9]="物理与光电学院"
+                institute[10]="经济与贸易学院"
+                institute[11]="自动化科学与工程学院"
+                institute[12]="计算机科学与工程学院"
+                institute[13]="电力学院"
+                institute[14]="生物科学与工程学院"
+                institute[15]="环境与能源学院"
+                institute[16]="软件学院"
+                institute[17]="工商管理学院"
+                institute[18]="公共管理学院"
+                institute[19]="马克思主义学院"
+                institute[20]="外国语学院"
+                institute[21]="法学院"
+                institute[22]="新闻与传播学院"
+                institute[23]="艺术学院"
+                institute[24]="体育学院"
+                institute[25]="设计学院"
+                
                 for(i;i<Response.data.length;i++){
-                  health[i]=Response.data[i].healthNum;
-                  ser[i]=Response.data[i].seriousNum;
-                  light[i]=Response.data[i].lightNum;
+                  for(var j=0;j<26;j++){
+                    if(Response.data[i].institute===institute[j]){
+                      health[j]=Response.data[i].healthNum;
+                      ser[j]=Response.data[i].seriousNum;
+                      light[j]=Response.data[i].lightNum;
+                    }
+                  }
+                  
                 }
                 console.log("health is"+health);
             }  
