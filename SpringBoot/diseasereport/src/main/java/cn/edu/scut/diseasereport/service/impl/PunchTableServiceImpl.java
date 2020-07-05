@@ -57,6 +57,9 @@ public class PunchTableServiceImpl implements PunchTableService {
     public SelectResult selectPunchList(String sqlStr) {
         List<Object> punches = new ArrayList<>();
         List<Map<String, Object>> maps = mPunchTableDao.selectPunchList(sqlStr);
+        if (maps.size() == 0) {
+            return null;
+        }
         Set<String> strings = maps.get(0).keySet();
         for (Map<String, Object> map : maps) {
             Object bean = createBean(map);
@@ -79,10 +82,13 @@ public class PunchTableServiceImpl implements PunchTableService {
         try {
             for (String s : keySet) {
                 if (s.equals("date")) {
-                    System.out.println("date");
                     addMap.put(s, Class.forName("java.util.Date"));
                 } else {
-                    addMap.put(s, Class.forName("java.lang.String"));
+                    if (s.equals("id")) {
+                        addMap.put(s, Class.forName("java.lang.Integer"));
+                    } else {
+                        addMap.put(s, Class.forName("java.lang.String"));
+                    }
                 }
                 addValMap.put(s, tempMap.get(s));
             }

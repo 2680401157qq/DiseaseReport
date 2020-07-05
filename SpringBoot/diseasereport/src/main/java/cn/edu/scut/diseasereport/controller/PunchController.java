@@ -75,7 +75,7 @@ public class PunchController {
 
     @RequestMapping(value = "/punches", method = RequestMethod.GET)
     public SelectResult getPunches(@RequestParam String tableName) {
-        String strSql = "select * from " + tableName;
+        String strSql = "select * from `" + tableName + "`";
         return mPunchTableService.selectPunchList(strSql);
     }
 
