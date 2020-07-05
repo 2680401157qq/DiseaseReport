@@ -22,4 +22,6 @@ public interface PunchTableDao {
     List<String> getColumnNames(@Param("tableName") String tableName);
 
     List<Map<String, Object>> selectPunchList(@Param(value = "sqlStr") String sqlStr);
+
+    List<Map<String, Object>> isPunched(@Param("id") String id, @Param("tableName") String tableName, @Param("date") String date);
 }

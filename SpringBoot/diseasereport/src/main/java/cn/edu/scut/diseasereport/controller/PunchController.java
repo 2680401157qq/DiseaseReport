@@ -29,12 +29,12 @@ public class PunchController {
 
     @RequestMapping(value = "/publish", method = RequestMethod.POST)
     public int publishPunch(@RequestBody String[] punchList) {
-        temp = Arrays.asList(punchList);;
+        temp = Arrays.asList(punchList);
+        ;
         // 使用当前时间作为表名
         Date date = new Date();//获取当前的日期
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");//设置日期格式
         String tableName = df.format(date);
-
         try {
             mPunchTableListService.insertPunchTableName(tableName, 1);
             return mPunchTableService.createPunchTable(tableName, temp);
@@ -77,5 +77,15 @@ public class PunchController {
     public SelectResult getPunches(@RequestParam String tableName) {
         String strSql = "select * from " + tableName;
         return mPunchTableService.selectPunchList(strSql);
+    }
+
+    @RequestMapping(value = "/isPunched", method = RequestMethod.GET)
+    public boolean isPunched(@RequestParam String id) {
+        //搜索当天的记录
+        Date date = new Date();//获取当前的日期
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        String dateStr = df.format(date);
+        String activePunch = mPunchTableListService.getActivePunch();
+        return mPunchTableService.isPunched(id, activePunch, dateStr);
     }
 }

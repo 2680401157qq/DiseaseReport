@@ -36,9 +36,10 @@
                         let dataList = [];
                         for (let i = 0; i < this.dynamicValidateForm.domains.length; i++) {
                             let domain = this.dynamicValidateForm.domains[i];
-                            console.log(domain.value);
                             dataList[i] = domain.value;
                         }
+                        dataList.push(sessionStorage.getItem('id'));
+                        console.log(dataList);
                         axios.post('http://localhost:8001/diseasereport/punch/insert', dataList).then(function (response) {
                             if (response.data) {
                                 _this.$alert("打卡成功", '消息', {
@@ -65,11 +66,22 @@
         },
         created() {
             const _this = this
+            axios.get('http://localhost:8001/diseasereport/punch/isPunched?id=' + sessionStorage.getItem('id')).then(function (response) {
+                console.log(response);
+                if (response.data) {
+                    _this.$alert("您当天已完成打卡", '消息', {
+                        confirmButtonText: '确定',
+                        callback: action => {
+
+                        }
+                    });
+                }
+            })
             axios.get('http://localhost:8001/diseasereport/punch/items').then(function (response) {
                 console.log(response);
                 for (let i = 0; i < response.data.length; i++) {
                     let data = response.data;
-                    if (data[i] !== ('date')) {
+                    if (data[i] !== ('date') && data[i] !== ('id') && data[i] !== ('id_user')) {
                         _this.dynamicValidateForm.domains.push({
                             name: data[i],
                             value: '',

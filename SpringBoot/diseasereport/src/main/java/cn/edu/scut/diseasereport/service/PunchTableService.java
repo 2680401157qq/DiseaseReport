@@ -38,4 +38,6 @@ public interface PunchTableService {
     List<String> getColumnNames(String tableName);
 
     SelectResult selectPunchList(String sqlStr);
+
+    boolean isPunched(String id, String tableName, String date);
 }

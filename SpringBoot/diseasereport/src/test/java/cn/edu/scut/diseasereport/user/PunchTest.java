@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -97,5 +98,16 @@ public class PunchTest {
         String sqlStr = "select * from fifthPunch";
         //List<Object> objects = mPunchTableService.selectPunchList(sqlStr);
         //System.out.println(objects);
+    }
+
+    @Test
+    public void isPunched() {
+        // 使用当前时间作为表名
+        Date date = new Date();//获取当前的日期
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+        String dateStr = df.format(date);
+        System.out.println(dateStr);
+        boolean punched = mPunchTableService.isPunched("201730685400", "2020-07-05 12:03:45", dateStr);
+        System.out.println(punched);
     }
 }

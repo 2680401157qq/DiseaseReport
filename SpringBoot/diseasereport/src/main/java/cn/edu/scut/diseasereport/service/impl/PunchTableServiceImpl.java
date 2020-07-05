@@ -65,6 +65,12 @@ public class PunchTableServiceImpl implements PunchTableService {
         return new SelectResult(new ArrayList<>(strings), punches);
     }
 
+    @Override
+    public boolean isPunched(String id, String tableName, String date) {
+        List<Map<String, Object>> mapList = mPunchTableDao.isPunched(id, tableName, date);
+        return mapList.size() != 0;
+    }
+
     public Object createBean(Map<String, Object> tempMap) {
         Punch punch = new Punch();
         Set<String> keySet = tempMap.keySet();

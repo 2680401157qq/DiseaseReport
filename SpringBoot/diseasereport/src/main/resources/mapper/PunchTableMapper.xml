@@ -11,7 +11,7 @@
         <foreach collection="columns" item="listItem" separator=",">
             `${listItem}` varchar(30)
         </foreach>
-        ,`id_user` int,
+        ,`id_user` varchar(30),
         primary key (`id`)
         )
     </update>
@@ -21,7 +21,7 @@
     </update>
 
     <insert id="insertPunch" parameterType="map">
-        insert into ${tableName} values (``, NOW(),
+        insert into `${tableName}` values (null , NOW(),
         <foreach collection="data" item="dataItem" separator=",">
             '${dataItem}'
         </foreach>
@@ -32,8 +32,12 @@
         select DISTINCT COLUMN_NAME from information_schema.COLUMNS where table_name = #{tableName}
     </select>
 
-    <select id="selectPunchList" resultType="java.util.Map">
+    <select id="selectPunchList" resultType="java.util.LinkedHashMap">
         ${sqlStr}
+    </select>
+
+    <select id="isPunched" resultType="java.util.LinkedHashMap">
+        select * from `${tableName}` where id_user = ${id} and `date` REGEXP  '^${date}';
     </select>
 </mapper>
 
