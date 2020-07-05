@@ -1,5 +1,6 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:SpringBoot/diseasereport/src/test/java/cn/edu/scut/diseasereport/AdminTest.java
 package cn.edu.scut.diseasereport;
 
@@ -52,10 +53,14 @@ public class AdminTest {
 =======
 //package cn.edu.scut.diseasereport;
 >>>>>>> Stashed changes
+=======
+//package cn.edu.scut.diseasereport;
+>>>>>>> Stashed changes
 //
 //import cn.edu.scut.diseasereport.entity.Admin;
 //import cn.edu.scut.diseasereport.entity.Healthful;
 //import cn.edu.scut.diseasereport.service.AdminService;
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 //import cn.edu.scut.diseasereport.service.impl.DoctorServiceImpl;
@@ -63,6 +68,10 @@ public class AdminTest {
 //import cn.edu.scut.diseasereport.service.DoctorService;
 //import cn.edu.scut.diseasereport.service.HealthService;
 //
+=======
+//import cn.edu.scut.diseasereport.service.DoctorService;
+//import cn.edu.scut.diseasereport.service.HealthService;
+>>>>>>> Stashed changes
 =======
 //import cn.edu.scut.diseasereport.service.DoctorService;
 //import cn.edu.scut.diseasereport.service.HealthService;
@@ -94,7 +103,11 @@ public class AdminTest {
 //    @Autowired
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 //    DoctorServiceImpl mDoctorService;
+=======
+//    DoctorService mDoctorService;
+>>>>>>> Stashed changes
 =======
 //    DoctorService mDoctorService;
 >>>>>>> Stashed changes
@@ -109,7 +122,10 @@ public class AdminTest {
 //
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 >>>>>>>> Stashed changes:SpringBoot/diseasereport/src/test/java/cn/edu/scut/diseasereport/user/AdminTest.java
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
