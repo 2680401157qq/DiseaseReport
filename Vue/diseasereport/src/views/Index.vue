@@ -21,7 +21,8 @@
                     <el-submenu v-for="(item, index) in $router.options.routes[1].children" :key="index"
                                 v-if="item.children!=null&&item.isShow[permission]" :index="item.path">
                         <template slot="title"><i :class="item.icon"></i>{{item.name}}</template>
-                        <el-menu-item v-for="(subItem, subindex) in item.children" v-if="subItem.show" :index="subItem.path"
+                        <el-menu-item v-for="(subItem, subindex) in item.children" v-if="subItem.show"
+                                      :index="subItem.path"
                                       :class="$route.path===subItem.path?'is-active':''" :key="index + subindex"
                                       @click="itemClick(subItem.name)">
                             <template slot="title"><i :class="subItem.icon"></i>{{subItem.name}}</template>
@@ -52,6 +53,7 @@
                 this.title = itemName
             },
             logout() {
+                sessionStorage.clear();
                 this.$router.push('/login')
             }
         }
