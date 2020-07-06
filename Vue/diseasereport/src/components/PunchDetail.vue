@@ -6,7 +6,7 @@
             :default-sort="{prop: 'date', order: 'descending'}"
     >
         <el-table-column
-                v-for="(item,index) in columns"
+                v-for="(item,index) in columns" v-if="item!=='date'"
                 :prop="columns[index]"
                 :label="item"
                 sortable
