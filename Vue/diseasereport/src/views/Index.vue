@@ -45,7 +45,8 @@
         data() {
             return {
                 title: "健康打卡",
-                permission: Number(sessionStorage.getItem("permission"))
+                permission: Number(sessionStorage.getItem("permission")),
+                // permission: 2
             };
         },
         methods: {

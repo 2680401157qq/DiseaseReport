@@ -67,9 +67,9 @@
             },
             edit(row) {
                 this.$router.push({
-                    path:'/useredit',
+                    path:'/doctoredit',
                     query:{
-                        studentId:row.studentId
+                        id:row.id
                     }
                 })
             },

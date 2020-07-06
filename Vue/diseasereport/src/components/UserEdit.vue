@@ -1,8 +1,9 @@
 <template>
     <div>
-        <el-form style="width: 30%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form style="width: 30%" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px"
+                 class="demo-ruleForm">
             <el-form-item label="用户id" prop="id" v-bind:aria-disabled="true">
-                <el-input v-model="ruleForm.id"></el-input>
+                <el-input v-model="ruleForm.id" :disabled="true"></el-input>
             </el-form-item>
             <el-form-item label="学号" prop="studentId">
                 <el-input v-model="ruleForm.studentNum"></el-input>
@@ -53,8 +54,8 @@
         data() {
             return {
                 ruleForm: {
-                    id:'',
-                    studentNum:'',
+                    id: '',
+                    studentNum: '',
                     name: '',
                     sex: '',
                     password: '',
@@ -66,33 +67,33 @@
                 },
                 rules: {
                     studentNum: [
-                        { required: true, message: '请输入学号', trigger: 'blur' },
-                        { min: 12, max: 12, message: '长度为 12 个数字', trigger: 'blur' }
+                        {required: true, message: '请输入学号', trigger: 'blur'},
+                        {min: 12, max: 12, message: '长度为 12 个数字', trigger: 'blur'}
                     ],
                     name: [
-                        { required: true, message: '请输入姓名', trigger: 'blur' },
-                        { min: 2, max: 5, message: '长度在 2 到 5 个字符', trigger: 'blur' }
+                        {required: true, message: '请输入姓名', trigger: 'blur'},
+                        {min: 2, max: 5, message: '长度在 2 到 5 个字符', trigger: 'blur'}
                     ],
                     sex: [
-                        { required: true, message: '请选择性别', trigger: 'blur' }
+                        {required: true, message: '请选择性别', trigger: 'blur'}
                     ],
                     password: [
-                        { required: true, message: '请输入密码', trigger: 'blur' }
+                        {required: true, message: '请输入密码', trigger: 'blur'}
                     ],
                     institute: [
-                        { required: true, message: '请选择学院', trigger: 'blur' }
+                        {required: true, message: '请选择学院', trigger: 'blur'}
                     ],
                     major: [
-                        { required: true, message: '请选择专业', trigger: 'blur' }
+                        {required: true, message: '请选择专业', trigger: 'blur'}
                     ],
                     dormitory: [
-                        { required: true, message: '请输入宿舍号', trigger: 'blur' }
+                        {required: true, message: '请输入宿舍号', trigger: 'blur'}
                     ],
                     clazz: [
-                        { required: true, message: '请输入班级', trigger: 'blur' }
+                        {required: true, message: '请输入班级', trigger: 'blur'}
                     ],
                     grade: [
-                        { required: true, message: '请选择年级', trigger: 'blur' }
+                        {required: true, message: '请选择年级', trigger: 'blur'}
                     ]
                 }
             };
@@ -103,16 +104,16 @@
                     if (valid) {
                         const _this = this;
                         axios.post('http://localhost:8001/diseasereport/user/edit', _this.ruleForm).then(function (response) {
-                            if (response.data){
-                                    _this.$alert('修改成功','消息',{
-                                        confirmButtonText:'确定',
-                                        callback:action => {
-                                            _this.$router.push('/usertable');
-                                        }
-                                    })
-                            }else {
-                                _this.$alert('修改失败','消息',{
-                                    confirmButtonText:'确定'
+                            if (response.data) {
+                                _this.$alert('修改成功', '消息', {
+                                    confirmButtonText: '确定',
+                                    callback: action => {
+                                        _this.$router.push('/usertable');
+                                    }
+                                })
+                            } else {
+                                _this.$alert('修改失败', '消息', {
+                                    confirmButtonText: '确定'
                                 })
                             }
                         });
@@ -133,7 +134,7 @@
                 _this.ruleForm = response.data;
             });
         }
-        
+
     }
 </script>
 

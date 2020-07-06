@@ -19,6 +19,7 @@ import PunchHistory from "../components/PunchHisoryTable";
 import PublishPunch from "../components/PublishPunch";
 import PunchEveryDay from "../components/PunchEveryDay";
 import PunchDetail from "../components/PunchDetail";
+import DoctorEdit from "../components/DoctorEdit";
 
 Vue.use(VueRouter)
 
@@ -139,6 +140,13 @@ const routes = [
                             name: "修改用户",
                             show: false,
                             component: UserEdit,
+                            icon: 'el-icon-s-claim'
+                        },
+                        {
+                            path: "/doctoredit",
+                            name: "修改医生",
+                            show: false,
+                            component: DoctorEdit,
                             icon: 'el-icon-s-claim'
                         }
                     ]

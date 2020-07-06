@@ -25,7 +25,7 @@ public class DoctorController {
         return mDoctorService.createDoctor(doctor);
     }
 
-    @RequestMapping(value = "/edit/user", method = RequestMethod.POST)
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public boolean editDoctorInfo(@RequestBody Doctor doctor) {
         return mDoctorService.editDoctorInfo(doctor);
     }
