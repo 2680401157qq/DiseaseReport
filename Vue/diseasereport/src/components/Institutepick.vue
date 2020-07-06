@@ -120,7 +120,13 @@
                         console.log(Response.data);
                         console.log(aInsdata[1][1]);
                         var i = 0;
-                        console.log(Response.data.length);
+                        // console.log(Response.data.length);
+                        for (var j = 0; j < 4; j++) {
+                            aInsdata[j + 1][3] = 0;
+                            aInsdata[j + 1][2] = 0;
+                            aInsdata[j + 1][1] = 0;
+                            aInsdata[j + 1][0] = 0;
+                        }
                         for (i; i < 4; i++) {
                             if ((Response.data.length != 0) && (label_get === Response.data[Response.data.length - i - 1].institute)) {
 
